@@ -62,7 +62,7 @@ public class ConstructionCard extends Card {
 	@Override
 	public void fromJson(JSONObject jsonObject) {
 		super.fromJson(jsonObject);
-		setAttackFactor(((Number) jsonObject.get("factor-attack")).intValue());
-		setDefenseFactor(((Number) jsonObject.get("factor-defense")).intValue());
+		setAttackFactor(((Number) jsonObject.get("factor_attack")).intValue());
+		setDefenseFactor(((Number) jsonObject.get("factor_defense")).intValue());
 	}
 }

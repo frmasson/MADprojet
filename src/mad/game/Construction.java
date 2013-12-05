@@ -4,10 +4,21 @@
  */
 package mad.game;
 
+import mad.cards.Card;
+
 /**
  *
  * @author Christophe
  */
-public class Construction {
-   
+public abstract class Construction {
+
+    Card card;
+
+    public Construction(Card card) {
+        addCard(card);
+    }
+
+    public void addCard(Card card) {
+        this.card = card;
+    }
 }
