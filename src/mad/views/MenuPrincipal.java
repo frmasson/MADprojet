@@ -73,9 +73,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         btnPartieMultijoueur.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnPartieMultijoueur.setText("Partie multijoueur");
+        btnPartieMultijoueur.setEnabled(false);
 
         btnOptions.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnOptions.setText("Options");
+        btnOptions.setEnabled(false);
 
         javax.swing.GroupLayout pnlMenuPrincipalLayout = new javax.swing.GroupLayout(pnlMenuPrincipal);
         pnlMenuPrincipal.setLayout(pnlMenuPrincipalLayout);
