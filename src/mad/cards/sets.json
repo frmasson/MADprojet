@@ -1,0 +1,19 @@
+[{"name": "Ensemble de base",
+        "cards": {"attack1": 15,
+            "attack2": 5,
+            "attack3": 5,
+            "attack4": 10,
+            "attack4": 5,
+            "attack6": 1,
+            "defense1": 10,
+            "defense2": 2,
+            "defense3": 5,
+            "factory1": 5,
+            "factory2": 2,
+            "factory3": 1,
+            "research_center1": 5,
+            "research_center2": 2,
+            "research_center3": 1,
+            "research_center4": 1
+        }
+    }]
