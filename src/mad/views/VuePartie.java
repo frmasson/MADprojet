@@ -457,6 +457,7 @@ public class VuePartie extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        txtEvenement.setEditable(false);
         txtEvenement.setText("Évènement");
 
         javax.swing.GroupLayout pnlStatutLayout = new javax.swing.GroupLayout(pnlStatut);
