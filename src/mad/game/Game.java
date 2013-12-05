@@ -10,24 +10,28 @@ import mad.cards.CardSet;
  */
 public class Game {
 
-    private ArrayList players;
+    private ArrayList<Player> players;
     private CardSet cards;
     private CardSet discardedCards;
     private int startingHitPoints;
     private int nbTours = 0;
+    private int nbPlayers = 0;
+    int nbPlayerAlive = 0;
 
     public Game(int nbPlayers, int startingHitPoints, CardSet cards) {
+        this.nbPlayers = nbPlayers;
+        this.nbPlayerAlive = nbPlayers;
         this.cards = cards;
         this.cards.shuffle();
         this.startingHitPoints = startingHitPoints;
-        createPlayers(nbPlayers);
+        createPlayers();
     }
 
-    private void createPlayers(int nbPlayers) {
+    private void createPlayers() {
         Player newPlayer = new HumanPlayer(startingHitPoints);
         createStartingPlayerCardSet(newPlayer);
         addPlayer(newPlayer);
-        for (int i = 0; i <= nbPlayers; i++) {
+        for (int i = 0; i <= this.nbPlayers; i++) {
             newPlayer = new AIPlayer(startingHitPoints);
             createStartingPlayerCardSet(newPlayer);
             addPlayer(newPlayer);
@@ -50,6 +54,7 @@ public class Game {
     }
 
     public void killPlayer(Player player) {
+        this.nbPlayerAlive--;
         //@TODO
     }
 
@@ -86,11 +91,20 @@ public class Game {
     }
 
     public void incrementNbTours() {
-        ++this.nbTours;
+        this.nbTours++;
     }
 
     public void playRound(){
-    
+        while(!isEnded()){
+        for (Player player : players){
+            playPlayerRound(player);
+        }   
+        incrementNbTours();
+        
+        }        
     }
-}
+    
+    public boolean isEnded(){
+    return (nbPlayers - nbPlayerAlive) > 1;
+    }
 

@@ -58,7 +58,7 @@ public abstract class Player {
         }
     }
 
-    public boolean hisKilled() {
+    public boolean isKilled() {
         return hitPoints > 0;
     }
 
