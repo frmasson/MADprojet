@@ -4,6 +4,9 @@
  */
 package madproto;
 
+import mad.views.MenuPrincipal;
+import mad.views.VuePartie;
+
 /**
  *
  * @author François
@@ -14,6 +17,8 @@ public class MADproto {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //MenuPrincipal vue = new MenuPrincipal();
+        VuePartie vue = new VuePartie();
+        vue.start();
     }
 }
