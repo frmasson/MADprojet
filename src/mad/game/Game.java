@@ -97,7 +97,7 @@ public class Game {
     public void playRound(){
         while(!isEnded()){
         for (Player player : players){
-            playPlayerRound(player);
+            //playPlayerRound(player);
         }   
         incrementNbTours();
         
@@ -107,4 +107,5 @@ public class Game {
     public boolean isEnded(){
     return (nbPlayers - nbPlayerAlive) > 1;
     }
+}
 

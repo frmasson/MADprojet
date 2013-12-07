@@ -89,45 +89,45 @@ public class VuePartie extends javax.swing.JFrame {
         lblUsineUn1 = new javax.swing.JLabel();
         lblUsineDeux1 = new javax.swing.JLabel();
         lblRecherche1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        pnlCarte1 = new javax.swing.JPanel();
+        lblNomCarte1 = new javax.swing.JLabel();
+        lblImgCarte1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jPanel3 = new javax.swing.JPanel();
-        lblNomCarteJeu1 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        txtDescriptionCarte1 = new javax.swing.JTextArea();
+        pnlCarteChoisi = new javax.swing.JPanel();
+        lblNomCarteChoisi = new javax.swing.JLabel();
+        lblImgCarteChoisi = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
-        jPanel76 = new javax.swing.JPanel();
-        jLabel122 = new javax.swing.JLabel();
-        jLabel123 = new javax.swing.JLabel();
+        txtDescriptionCarteChoisi = new javax.swing.JTextArea();
+        pnlCarte2 = new javax.swing.JPanel();
+        lblNomCarte2 = new javax.swing.JLabel();
+        lblImgCarte2 = new javax.swing.JLabel();
         jScrollPane77 = new javax.swing.JScrollPane();
-        jTextArea77 = new javax.swing.JTextArea();
-        jPanel77 = new javax.swing.JPanel();
-        jLabel124 = new javax.swing.JLabel();
-        jLabel125 = new javax.swing.JLabel();
+        txtDescriptionCarte2 = new javax.swing.JTextArea();
+        pnlCarte3 = new javax.swing.JPanel();
+        lblNomCarte3 = new javax.swing.JLabel();
+        lblImgCarte3 = new javax.swing.JLabel();
         jScrollPane78 = new javax.swing.JScrollPane();
-        jTextArea78 = new javax.swing.JTextArea();
-        jPanel78 = new javax.swing.JPanel();
-        jLabel126 = new javax.swing.JLabel();
-        jLabel127 = new javax.swing.JLabel();
+        txtDescriptionCarte3 = new javax.swing.JTextArea();
+        pnlCarte4 = new javax.swing.JPanel();
+        lblNomCarte4 = new javax.swing.JLabel();
+        lblImgCarte4 = new javax.swing.JLabel();
         jScrollPane79 = new javax.swing.JScrollPane();
-        jTextArea79 = new javax.swing.JTextArea();
-        jPanel86 = new javax.swing.JPanel();
-        jLabel142 = new javax.swing.JLabel();
-        jLabel143 = new javax.swing.JLabel();
+        txtDescriptionCarte4 = new javax.swing.JTextArea();
+        pnlCarte5 = new javax.swing.JPanel();
+        lblNomCarte5 = new javax.swing.JLabel();
+        lblImgCarte5 = new javax.swing.JLabel();
         jScrollPane87 = new javax.swing.JScrollPane();
-        jTextArea87 = new javax.swing.JTextArea();
+        txtDescriptionCarte5 = new javax.swing.JTextArea();
         PnlCarteEnJeu = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        pnlCarteJeu = new javax.swing.JPanel();
         lblNomCarteJeu = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblImgCarteJeu = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        txtDescriptionCarteJeu = new javax.swing.JTextArea();
         pnlStatut = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtEvenement = new javax.swing.JTextArea();
         pnlInformation = new javax.swing.JPanel();
         jLabel24 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
@@ -386,276 +386,276 @@ public class VuePartie extends javax.swing.JFrame {
         lblRecherche1.setText("Recherche");
         lblRecherche1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel2.setPreferredSize(new java.awt.Dimension(110, 195));
+        pnlCarte1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarte1.setPreferredSize(new java.awt.Dimension(110, 195));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel9.setText("Carte de défense 1");
+        lblNomCarte1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lblNomCarte1.setText("Carte de défense 1");
 
-        jLabel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblImgCarte1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea3.setBackground(new java.awt.Color(240, 240, 240));
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
-        jTextArea3.setLineWrap(true);
-        jTextArea3.setRows(3);
-        jTextArea3.setText("pew epwep we pewp wpe pwpepwep wp epw pewp wp epwp wppewpw ");
-        jTextArea3.setWrapStyleWord(true);
-        jScrollPane3.setViewportView(jTextArea3);
+        txtDescriptionCarte1.setBackground(new java.awt.Color(240, 240, 240));
+        txtDescriptionCarte1.setColumns(20);
+        txtDescriptionCarte1.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
+        txtDescriptionCarte1.setLineWrap(true);
+        txtDescriptionCarte1.setRows(3);
+        txtDescriptionCarte1.setText("pew epwep we pewp wpe pwpepwep wp epw pewp wp epwp wppewpw ");
+        txtDescriptionCarte1.setWrapStyleWord(true);
+        jScrollPane3.setViewportView(txtDescriptionCarte1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlCarte1Layout = new javax.swing.GroupLayout(pnlCarte1);
+        pnlCarte1.setLayout(pnlCarte1Layout);
+        pnlCarte1Layout.setHorizontalGroup(
+            pnlCarte1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarte1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
+                .addGroup(pnlCarte1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblImgCarte1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlCarte1Layout.createSequentialGroup()
+                        .addComponent(lblNomCarte1)
                         .addGap(0, 5, Short.MAX_VALUE))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        pnlCarte1Layout.setVerticalGroup(
+            pnlCarte1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarte1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9)
+                .addComponent(lblNomCarte1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblImgCarte1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarteChoisi.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblNomCarteJeu1.setText("Carte d'attaque 1");
+        lblNomCarteChoisi.setText("Carte d'attaque 1");
 
-        jLabel11.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblImgCarteChoisi.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea4.setBackground(new java.awt.Color(240, 240, 240));
-        jTextArea4.setColumns(20);
-        jTextArea4.setEditable(false);
-        jTextArea4.setLineWrap(true);
-        jTextArea4.setRows(5);
-        jTextArea4.setText("Firin a lazor in your face and shitz\nblarggggggggggggg!!!!!!!1\nDégâts : 2-20");
-        jTextArea4.setWrapStyleWord(true);
-        jScrollPane4.setViewportView(jTextArea4);
+        txtDescriptionCarteChoisi.setBackground(new java.awt.Color(240, 240, 240));
+        txtDescriptionCarteChoisi.setColumns(20);
+        txtDescriptionCarteChoisi.setEditable(false);
+        txtDescriptionCarteChoisi.setLineWrap(true);
+        txtDescriptionCarteChoisi.setRows(5);
+        txtDescriptionCarteChoisi.setText("Firin a lazor in your face and shitz\nblarggggggggggggg!!!!!!!1\nDégâts : 2-20");
+        txtDescriptionCarteChoisi.setWrapStyleWord(true);
+        jScrollPane4.setViewportView(txtDescriptionCarteChoisi);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlCarteChoisiLayout = new javax.swing.GroupLayout(pnlCarteChoisi);
+        pnlCarteChoisi.setLayout(pnlCarteChoisiLayout);
+        pnlCarteChoisiLayout.setHorizontalGroup(
+            pnlCarteChoisiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarteChoisiLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblNomCarteJeu1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlCarteChoisiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCarteChoisiLayout.createSequentialGroup()
+                        .addGroup(pnlCarteChoisiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblNomCarteChoisi, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblImgCarteChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        pnlCarteChoisiLayout.setVerticalGroup(
+            pnlCarteChoisiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarteChoisiLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblNomCarteJeu1)
+                .addComponent(lblNomCarteChoisi)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblImgCarteChoisi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel76.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel76.setPreferredSize(new java.awt.Dimension(110, 195));
+        pnlCarte2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarte2.setPreferredSize(new java.awt.Dimension(110, 195));
 
-        jLabel122.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel122.setText("Carte de défense 1");
+        lblNomCarte2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lblNomCarte2.setText("Carte de défense 1");
 
-        jLabel123.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblImgCarte2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jScrollPane77.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane77.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea77.setBackground(new java.awt.Color(240, 240, 240));
-        jTextArea77.setColumns(20);
-        jTextArea77.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
-        jTextArea77.setLineWrap(true);
-        jTextArea77.setRows(3);
-        jTextArea77.setText("pew epwep we pewp wpe pwpepwep wp epw pewp wp epwp wppewpw ");
-        jTextArea77.setWrapStyleWord(true);
-        jScrollPane77.setViewportView(jTextArea77);
+        txtDescriptionCarte2.setBackground(new java.awt.Color(240, 240, 240));
+        txtDescriptionCarte2.setColumns(20);
+        txtDescriptionCarte2.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
+        txtDescriptionCarte2.setLineWrap(true);
+        txtDescriptionCarte2.setRows(3);
+        txtDescriptionCarte2.setText("pew epwep we pewp wpe pwpepwep wp epw pewp wp epwp wppewpw ");
+        txtDescriptionCarte2.setWrapStyleWord(true);
+        jScrollPane77.setViewportView(txtDescriptionCarte2);
 
-        javax.swing.GroupLayout jPanel76Layout = new javax.swing.GroupLayout(jPanel76);
-        jPanel76.setLayout(jPanel76Layout);
-        jPanel76Layout.setHorizontalGroup(
-            jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel76Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlCarte2Layout = new javax.swing.GroupLayout(pnlCarte2);
+        pnlCarte2.setLayout(pnlCarte2Layout);
+        pnlCarte2Layout.setHorizontalGroup(
+            pnlCarte2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarte2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel123, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel76Layout.createSequentialGroup()
-                        .addComponent(jLabel122)
+                .addGroup(pnlCarte2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblImgCarte2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlCarte2Layout.createSequentialGroup()
+                        .addComponent(lblNomCarte2)
                         .addGap(0, 5, Short.MAX_VALUE))
                     .addComponent(jScrollPane77, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel76Layout.setVerticalGroup(
-            jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel76Layout.createSequentialGroup()
+        pnlCarte2Layout.setVerticalGroup(
+            pnlCarte2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarte2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel122)
+                .addComponent(lblNomCarte2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel123, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblImgCarte2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane77)
                 .addContainerGap())
         );
 
-        jPanel77.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel77.setPreferredSize(new java.awt.Dimension(110, 195));
+        pnlCarte3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarte3.setPreferredSize(new java.awt.Dimension(110, 195));
 
-        jLabel124.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel124.setText("Carte de défense 1");
+        lblNomCarte3.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lblNomCarte3.setText("Carte de défense 1");
 
-        jLabel125.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblImgCarte3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jScrollPane78.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane78.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea78.setBackground(new java.awt.Color(240, 240, 240));
-        jTextArea78.setColumns(20);
-        jTextArea78.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
-        jTextArea78.setLineWrap(true);
-        jTextArea78.setRows(3);
-        jTextArea78.setText("pew epwep we pewp wpe pwpepwep wp epw pewp wp epwp wppewpw ");
-        jTextArea78.setWrapStyleWord(true);
-        jScrollPane78.setViewportView(jTextArea78);
+        txtDescriptionCarte3.setBackground(new java.awt.Color(240, 240, 240));
+        txtDescriptionCarte3.setColumns(20);
+        txtDescriptionCarte3.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
+        txtDescriptionCarte3.setLineWrap(true);
+        txtDescriptionCarte3.setRows(3);
+        txtDescriptionCarte3.setText("pew epwep we pewp wpe pwpepwep wp epw pewp wp epwp wppewpw ");
+        txtDescriptionCarte3.setWrapStyleWord(true);
+        jScrollPane78.setViewportView(txtDescriptionCarte3);
 
-        javax.swing.GroupLayout jPanel77Layout = new javax.swing.GroupLayout(jPanel77);
-        jPanel77.setLayout(jPanel77Layout);
-        jPanel77Layout.setHorizontalGroup(
-            jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel77Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlCarte3Layout = new javax.swing.GroupLayout(pnlCarte3);
+        pnlCarte3.setLayout(pnlCarte3Layout);
+        pnlCarte3Layout.setHorizontalGroup(
+            pnlCarte3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarte3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel125, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel77Layout.createSequentialGroup()
-                        .addComponent(jLabel124)
+                .addGroup(pnlCarte3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblImgCarte3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlCarte3Layout.createSequentialGroup()
+                        .addComponent(lblNomCarte3)
                         .addGap(0, 5, Short.MAX_VALUE))
                     .addComponent(jScrollPane78, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel77Layout.setVerticalGroup(
-            jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel77Layout.createSequentialGroup()
+        pnlCarte3Layout.setVerticalGroup(
+            pnlCarte3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarte3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel124)
+                .addComponent(lblNomCarte3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel125, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblImgCarte3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane78)
                 .addContainerGap())
         );
 
-        jPanel78.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel78.setPreferredSize(new java.awt.Dimension(110, 195));
+        pnlCarte4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarte4.setPreferredSize(new java.awt.Dimension(110, 195));
 
-        jLabel126.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel126.setText("Carte de défense 1");
+        lblNomCarte4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lblNomCarte4.setText("Carte de défense 1");
 
-        jLabel127.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblImgCarte4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jScrollPane79.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane79.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea79.setBackground(new java.awt.Color(240, 240, 240));
-        jTextArea79.setColumns(20);
-        jTextArea79.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
-        jTextArea79.setLineWrap(true);
-        jTextArea79.setRows(3);
-        jTextArea79.setText("pew epwep we pewp wpe pwpepwep wp epw pewp wp epwp wppewpw ");
-        jTextArea79.setWrapStyleWord(true);
-        jScrollPane79.setViewportView(jTextArea79);
+        txtDescriptionCarte4.setBackground(new java.awt.Color(240, 240, 240));
+        txtDescriptionCarte4.setColumns(20);
+        txtDescriptionCarte4.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
+        txtDescriptionCarte4.setLineWrap(true);
+        txtDescriptionCarte4.setRows(3);
+        txtDescriptionCarte4.setText("pew epwep we pewp wpe pwpepwep wp epw pewp wp epwp wppewpw ");
+        txtDescriptionCarte4.setWrapStyleWord(true);
+        jScrollPane79.setViewportView(txtDescriptionCarte4);
 
-        javax.swing.GroupLayout jPanel78Layout = new javax.swing.GroupLayout(jPanel78);
-        jPanel78.setLayout(jPanel78Layout);
-        jPanel78Layout.setHorizontalGroup(
-            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel78Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlCarte4Layout = new javax.swing.GroupLayout(pnlCarte4);
+        pnlCarte4.setLayout(pnlCarte4Layout);
+        pnlCarte4Layout.setHorizontalGroup(
+            pnlCarte4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarte4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel127, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel78Layout.createSequentialGroup()
-                        .addComponent(jLabel126)
+                .addGroup(pnlCarte4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblImgCarte4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlCarte4Layout.createSequentialGroup()
+                        .addComponent(lblNomCarte4)
                         .addGap(0, 5, Short.MAX_VALUE))
                     .addComponent(jScrollPane79, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel78Layout.setVerticalGroup(
-            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel78Layout.createSequentialGroup()
+        pnlCarte4Layout.setVerticalGroup(
+            pnlCarte4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarte4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel126)
+                .addComponent(lblNomCarte4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel127, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblImgCarte4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane79)
                 .addContainerGap())
         );
 
-        jPanel86.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel86.setPreferredSize(new java.awt.Dimension(110, 195));
+        pnlCarte5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarte5.setPreferredSize(new java.awt.Dimension(110, 195));
 
-        jLabel142.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        jLabel142.setText("Carte de défense 1");
+        lblNomCarte5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        lblNomCarte5.setText("Carte de défense 1");
 
-        jLabel143.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblImgCarte5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jScrollPane87.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane87.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea87.setBackground(new java.awt.Color(240, 240, 240));
-        jTextArea87.setColumns(20);
-        jTextArea87.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
-        jTextArea87.setLineWrap(true);
-        jTextArea87.setRows(3);
-        jTextArea87.setText("pew epwep we pewp wpe pwpepwep wp epw pewp wp epwp wppewpw ");
-        jTextArea87.setWrapStyleWord(true);
-        jScrollPane87.setViewportView(jTextArea87);
+        txtDescriptionCarte5.setBackground(new java.awt.Color(240, 240, 240));
+        txtDescriptionCarte5.setColumns(20);
+        txtDescriptionCarte5.setFont(new java.awt.Font("Monospaced", 0, 10)); // NOI18N
+        txtDescriptionCarte5.setLineWrap(true);
+        txtDescriptionCarte5.setRows(3);
+        txtDescriptionCarte5.setText("pew epwep we pewp wpe pwpepwep wp epw pewp wp epwp wppewpw ");
+        txtDescriptionCarte5.setWrapStyleWord(true);
+        jScrollPane87.setViewportView(txtDescriptionCarte5);
 
-        javax.swing.GroupLayout jPanel86Layout = new javax.swing.GroupLayout(jPanel86);
-        jPanel86.setLayout(jPanel86Layout);
-        jPanel86Layout.setHorizontalGroup(
-            jPanel86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel86Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlCarte5Layout = new javax.swing.GroupLayout(pnlCarte5);
+        pnlCarte5.setLayout(pnlCarte5Layout);
+        pnlCarte5Layout.setHorizontalGroup(
+            pnlCarte5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarte5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel143, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel86Layout.createSequentialGroup()
-                        .addComponent(jLabel142)
+                .addGroup(pnlCarte5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblImgCarte5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlCarte5Layout.createSequentialGroup()
+                        .addComponent(lblNomCarte5)
                         .addGap(0, 5, Short.MAX_VALUE))
                     .addComponent(jScrollPane87, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jPanel86Layout.setVerticalGroup(
-            jPanel86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel86Layout.createSequentialGroup()
+        pnlCarte5Layout.setVerticalGroup(
+            pnlCarte5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarte5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel142)
+                .addComponent(lblNomCarte5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel143, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblImgCarte5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane87)
                 .addContainerGap())
@@ -667,7 +667,7 @@ public class VuePartie extends javax.swing.JFrame {
             PnlInfoPersonnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlInfoPersonnelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlCarteChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PnlInfoPersonnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PnlInfoPersonnelLayout.createSequentialGroup()
@@ -690,15 +690,15 @@ public class VuePartie extends javax.swing.JFrame {
                         .addComponent(lblRecherche1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43))
                     .addGroup(PnlInfoPersonnelLayout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pnlCarte1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel76, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pnlCarte2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel77, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pnlCarte3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel78, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pnlCarte4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel86, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pnlCarte5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         PnlInfoPersonnelLayout.setVerticalGroup(
@@ -706,7 +706,7 @@ public class VuePartie extends javax.swing.JFrame {
             .addGroup(PnlInfoPersonnelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PnlInfoPersonnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlCarteChoisi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(PnlInfoPersonnelLayout.createSequentialGroup()
                         .addGroup(PnlInfoPersonnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PnlInfoPersonnelLayout.createSequentialGroup()
@@ -725,53 +725,53 @@ public class VuePartie extends javax.swing.JFrame {
                                 .addComponent(lblUsineUn1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PnlInfoPersonnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                            .addComponent(jPanel76, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                            .addComponent(jPanel77, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                            .addComponent(jPanel86, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                            .addComponent(jPanel78, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE))))
+                            .addComponent(pnlCarte1, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(pnlCarte2, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(pnlCarte3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(pnlCarte5, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(pnlCarte4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE))))
                 .addContainerGap())
         );
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarteJeu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         lblNomCarteJeu.setText("Carte d'attaque 1");
 
-        jLabel8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblImgCarteJeu.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea2.setBackground(new java.awt.Color(240, 240, 240));
-        jTextArea2.setColumns(20);
-        jTextArea2.setEditable(false);
-        jTextArea2.setLineWrap(true);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Firin a lazor in your face and shitz\nblarggggggggggggg!!!!!!!1\nDégâts : 2-20");
-        jTextArea2.setWrapStyleWord(true);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtDescriptionCarteJeu.setBackground(new java.awt.Color(240, 240, 240));
+        txtDescriptionCarteJeu.setColumns(20);
+        txtDescriptionCarteJeu.setEditable(false);
+        txtDescriptionCarteJeu.setLineWrap(true);
+        txtDescriptionCarteJeu.setRows(5);
+        txtDescriptionCarteJeu.setText("Firin a lazor in your face and shitz\nblarggggggggggggg!!!!!!!1\nDégâts : 2-20");
+        txtDescriptionCarteJeu.setWrapStyleWord(true);
+        jScrollPane2.setViewportView(txtDescriptionCarteJeu);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlCarteJeuLayout = new javax.swing.GroupLayout(pnlCarteJeu);
+        pnlCarteJeu.setLayout(pnlCarteJeuLayout);
+        pnlCarteJeuLayout.setHorizontalGroup(
+            pnlCarteJeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarteJeuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(pnlCarteJeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlCarteJeuLayout.createSequentialGroup()
                         .addComponent(lblNomCarteJeu)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblImgCarteJeu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pnlCarteJeuLayout.setVerticalGroup(
+            pnlCarteJeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCarteJeuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblNomCarteJeu)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblImgCarteJeu, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2)
                 .addContainerGap())
@@ -785,26 +785,26 @@ public class VuePartie extends javax.swing.JFrame {
             PnlCarteEnJeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlCarteEnJeuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlCarteJeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PnlCarteEnJeuLayout.setVerticalGroup(
             PnlCarteEnJeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlCarteEnJeuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlCarteJeu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pnlStatut.setPreferredSize(new java.awt.Dimension(865, 75));
         pnlStatut.setVerifyInputWhenFocusTarget(false);
 
-        jTextArea1.setBackground(new java.awt.Color(240, 240, 240));
-        jTextArea1.setColumns(20);
-        jTextArea1.setEditable(false);
-        jTextArea1.setRows(3);
-        jTextArea1.setText("Joueur 1 joue\nJoueur 2 joue\nJoueur 3 joue\njoueur 4 joue");
-        jScrollPane1.setViewportView(jTextArea1);
+        txtEvenement.setBackground(new java.awt.Color(240, 240, 240));
+        txtEvenement.setColumns(20);
+        txtEvenement.setEditable(false);
+        txtEvenement.setRows(3);
+        txtEvenement.setText("Joueur 1 joue\nJoueur 2 joue\nJoueur 3 joue\njoueur 4 joue");
+        jScrollPane1.setViewportView(txtEvenement);
 
         javax.swing.GroupLayout pnlStatutLayout = new javax.swing.GroupLayout(pnlStatut);
         pnlStatut.setLayout(pnlStatutLayout);
@@ -887,7 +887,7 @@ public class VuePartie extends javax.swing.JFrame {
                     .addGroup(PnlPartieLayout.createSequentialGroup()
                         .addGroup(PnlPartieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pnlStatut, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
-                            .addComponent(PnlInfoPersonnel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(PnlInfoPersonnel, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(PnlPartieLayout.createSequentialGroup()
                         .addComponent(PnlCarteEnJeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -955,454 +955,44 @@ public class VuePartie extends javax.swing.JFrame {
     private javax.swing.JButton btnAction1;
     private javax.swing.JButton btnAction2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
-    private javax.swing.JLabel jLabel102;
-    private javax.swing.JLabel jLabel103;
-    private javax.swing.JLabel jLabel104;
-    private javax.swing.JLabel jLabel105;
-    private javax.swing.JLabel jLabel106;
-    private javax.swing.JLabel jLabel107;
-    private javax.swing.JLabel jLabel108;
-    private javax.swing.JLabel jLabel109;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel110;
-    private javax.swing.JLabel jLabel111;
-    private javax.swing.JLabel jLabel112;
-    private javax.swing.JLabel jLabel113;
-    private javax.swing.JLabel jLabel114;
-    private javax.swing.JLabel jLabel115;
-    private javax.swing.JLabel jLabel116;
-    private javax.swing.JLabel jLabel117;
-    private javax.swing.JLabel jLabel118;
-    private javax.swing.JLabel jLabel119;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel120;
-    private javax.swing.JLabel jLabel121;
-    private javax.swing.JLabel jLabel122;
-    private javax.swing.JLabel jLabel123;
-    private javax.swing.JLabel jLabel124;
-    private javax.swing.JLabel jLabel125;
-    private javax.swing.JLabel jLabel126;
-    private javax.swing.JLabel jLabel127;
-    private javax.swing.JLabel jLabel128;
-    private javax.swing.JLabel jLabel129;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
-    private javax.swing.JLabel jLabel132;
-    private javax.swing.JLabel jLabel133;
-    private javax.swing.JLabel jLabel134;
-    private javax.swing.JLabel jLabel135;
-    private javax.swing.JLabel jLabel136;
-    private javax.swing.JLabel jLabel137;
-    private javax.swing.JLabel jLabel138;
-    private javax.swing.JLabel jLabel139;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel140;
-    private javax.swing.JLabel jLabel141;
-    private javax.swing.JLabel jLabel142;
-    private javax.swing.JLabel jLabel143;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
-    private javax.swing.JLabel jLabel65;
-    private javax.swing.JLabel jLabel66;
-    private javax.swing.JLabel jLabel67;
-    private javax.swing.JLabel jLabel68;
-    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel70;
-    private javax.swing.JLabel jLabel71;
-    private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
-    private javax.swing.JLabel jLabel89;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabel90;
-    private javax.swing.JLabel jLabel91;
-    private javax.swing.JLabel jLabel92;
-    private javax.swing.JLabel jLabel93;
-    private javax.swing.JLabel jLabel94;
-    private javax.swing.JLabel jLabel95;
-    private javax.swing.JLabel jLabel96;
-    private javax.swing.JLabel jLabel97;
-    private javax.swing.JLabel jLabel98;
-    private javax.swing.JLabel jLabel99;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel27;
-    private javax.swing.JPanel jPanel28;
-    private javax.swing.JPanel jPanel29;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
-    private javax.swing.JPanel jPanel32;
-    private javax.swing.JPanel jPanel33;
-    private javax.swing.JPanel jPanel34;
-    private javax.swing.JPanel jPanel35;
-    private javax.swing.JPanel jPanel36;
-    private javax.swing.JPanel jPanel37;
-    private javax.swing.JPanel jPanel38;
-    private javax.swing.JPanel jPanel39;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel40;
-    private javax.swing.JPanel jPanel41;
-    private javax.swing.JPanel jPanel42;
-    private javax.swing.JPanel jPanel43;
-    private javax.swing.JPanel jPanel44;
-    private javax.swing.JPanel jPanel45;
-    private javax.swing.JPanel jPanel46;
-    private javax.swing.JPanel jPanel47;
-    private javax.swing.JPanel jPanel48;
-    private javax.swing.JPanel jPanel49;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel50;
-    private javax.swing.JPanel jPanel51;
-    private javax.swing.JPanel jPanel52;
-    private javax.swing.JPanel jPanel53;
-    private javax.swing.JPanel jPanel54;
-    private javax.swing.JPanel jPanel55;
-    private javax.swing.JPanel jPanel56;
-    private javax.swing.JPanel jPanel57;
-    private javax.swing.JPanel jPanel58;
-    private javax.swing.JPanel jPanel59;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel60;
-    private javax.swing.JPanel jPanel61;
-    private javax.swing.JPanel jPanel62;
-    private javax.swing.JPanel jPanel63;
-    private javax.swing.JPanel jPanel64;
-    private javax.swing.JPanel jPanel65;
-    private javax.swing.JPanel jPanel66;
-    private javax.swing.JPanel jPanel67;
-    private javax.swing.JPanel jPanel68;
-    private javax.swing.JPanel jPanel69;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel70;
-    private javax.swing.JPanel jPanel71;
-    private javax.swing.JPanel jPanel72;
-    private javax.swing.JPanel jPanel73;
-    private javax.swing.JPanel jPanel74;
-    private javax.swing.JPanel jPanel75;
-    private javax.swing.JPanel jPanel76;
-    private javax.swing.JPanel jPanel77;
-    private javax.swing.JPanel jPanel78;
-    private javax.swing.JPanel jPanel79;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel80;
-    private javax.swing.JPanel jPanel81;
-    private javax.swing.JPanel jPanel82;
-    private javax.swing.JPanel jPanel83;
-    private javax.swing.JPanel jPanel84;
-    private javax.swing.JPanel jPanel85;
-    private javax.swing.JPanel jPanel86;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
-    private javax.swing.JScrollPane jScrollPane14;
-    private javax.swing.JScrollPane jScrollPane15;
-    private javax.swing.JScrollPane jScrollPane16;
-    private javax.swing.JScrollPane jScrollPane17;
-    private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane20;
-    private javax.swing.JScrollPane jScrollPane21;
-    private javax.swing.JScrollPane jScrollPane22;
-    private javax.swing.JScrollPane jScrollPane23;
-    private javax.swing.JScrollPane jScrollPane24;
-    private javax.swing.JScrollPane jScrollPane25;
-    private javax.swing.JScrollPane jScrollPane26;
-    private javax.swing.JScrollPane jScrollPane27;
-    private javax.swing.JScrollPane jScrollPane28;
-    private javax.swing.JScrollPane jScrollPane29;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane30;
-    private javax.swing.JScrollPane jScrollPane31;
-    private javax.swing.JScrollPane jScrollPane32;
-    private javax.swing.JScrollPane jScrollPane33;
-    private javax.swing.JScrollPane jScrollPane34;
-    private javax.swing.JScrollPane jScrollPane35;
-    private javax.swing.JScrollPane jScrollPane36;
-    private javax.swing.JScrollPane jScrollPane37;
-    private javax.swing.JScrollPane jScrollPane38;
-    private javax.swing.JScrollPane jScrollPane39;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane40;
-    private javax.swing.JScrollPane jScrollPane41;
-    private javax.swing.JScrollPane jScrollPane42;
-    private javax.swing.JScrollPane jScrollPane43;
-    private javax.swing.JScrollPane jScrollPane44;
-    private javax.swing.JScrollPane jScrollPane45;
-    private javax.swing.JScrollPane jScrollPane46;
-    private javax.swing.JScrollPane jScrollPane47;
-    private javax.swing.JScrollPane jScrollPane48;
-    private javax.swing.JScrollPane jScrollPane49;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane50;
-    private javax.swing.JScrollPane jScrollPane51;
-    private javax.swing.JScrollPane jScrollPane52;
-    private javax.swing.JScrollPane jScrollPane53;
-    private javax.swing.JScrollPane jScrollPane54;
-    private javax.swing.JScrollPane jScrollPane55;
-    private javax.swing.JScrollPane jScrollPane56;
-    private javax.swing.JScrollPane jScrollPane57;
-    private javax.swing.JScrollPane jScrollPane58;
-    private javax.swing.JScrollPane jScrollPane59;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane60;
-    private javax.swing.JScrollPane jScrollPane61;
-    private javax.swing.JScrollPane jScrollPane62;
-    private javax.swing.JScrollPane jScrollPane63;
-    private javax.swing.JScrollPane jScrollPane64;
-    private javax.swing.JScrollPane jScrollPane65;
-    private javax.swing.JScrollPane jScrollPane66;
-    private javax.swing.JScrollPane jScrollPane67;
-    private javax.swing.JScrollPane jScrollPane68;
-    private javax.swing.JScrollPane jScrollPane69;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane70;
-    private javax.swing.JScrollPane jScrollPane71;
-    private javax.swing.JScrollPane jScrollPane72;
-    private javax.swing.JScrollPane jScrollPane73;
-    private javax.swing.JScrollPane jScrollPane74;
-    private javax.swing.JScrollPane jScrollPane75;
-    private javax.swing.JScrollPane jScrollPane76;
     private javax.swing.JScrollPane jScrollPane77;
     private javax.swing.JScrollPane jScrollPane78;
     private javax.swing.JScrollPane jScrollPane79;
-    private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane80;
-    private javax.swing.JScrollPane jScrollPane81;
-    private javax.swing.JScrollPane jScrollPane82;
-    private javax.swing.JScrollPane jScrollPane83;
-    private javax.swing.JScrollPane jScrollPane84;
-    private javax.swing.JScrollPane jScrollPane85;
-    private javax.swing.JScrollPane jScrollPane86;
     private javax.swing.JScrollPane jScrollPane87;
-    private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea10;
-    private javax.swing.JTextArea jTextArea11;
-    private javax.swing.JTextArea jTextArea12;
-    private javax.swing.JTextArea jTextArea13;
-    private javax.swing.JTextArea jTextArea14;
-    private javax.swing.JTextArea jTextArea15;
-    private javax.swing.JTextArea jTextArea16;
-    private javax.swing.JTextArea jTextArea17;
-    private javax.swing.JTextArea jTextArea18;
-    private javax.swing.JTextArea jTextArea19;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea20;
-    private javax.swing.JTextArea jTextArea21;
-    private javax.swing.JTextArea jTextArea22;
-    private javax.swing.JTextArea jTextArea23;
-    private javax.swing.JTextArea jTextArea24;
-    private javax.swing.JTextArea jTextArea25;
-    private javax.swing.JTextArea jTextArea26;
-    private javax.swing.JTextArea jTextArea27;
-    private javax.swing.JTextArea jTextArea28;
-    private javax.swing.JTextArea jTextArea29;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea30;
-    private javax.swing.JTextArea jTextArea31;
-    private javax.swing.JTextArea jTextArea32;
-    private javax.swing.JTextArea jTextArea33;
-    private javax.swing.JTextArea jTextArea34;
-    private javax.swing.JTextArea jTextArea35;
-    private javax.swing.JTextArea jTextArea36;
-    private javax.swing.JTextArea jTextArea37;
-    private javax.swing.JTextArea jTextArea38;
-    private javax.swing.JTextArea jTextArea39;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextArea jTextArea40;
-    private javax.swing.JTextArea jTextArea41;
-    private javax.swing.JTextArea jTextArea42;
-    private javax.swing.JTextArea jTextArea43;
-    private javax.swing.JTextArea jTextArea44;
-    private javax.swing.JTextArea jTextArea45;
-    private javax.swing.JTextArea jTextArea46;
-    private javax.swing.JTextArea jTextArea47;
-    private javax.swing.JTextArea jTextArea48;
-    private javax.swing.JTextArea jTextArea49;
-    private javax.swing.JTextArea jTextArea5;
-    private javax.swing.JTextArea jTextArea50;
-    private javax.swing.JTextArea jTextArea51;
-    private javax.swing.JTextArea jTextArea52;
-    private javax.swing.JTextArea jTextArea53;
-    private javax.swing.JTextArea jTextArea54;
-    private javax.swing.JTextArea jTextArea55;
-    private javax.swing.JTextArea jTextArea56;
-    private javax.swing.JTextArea jTextArea57;
-    private javax.swing.JTextArea jTextArea58;
-    private javax.swing.JTextArea jTextArea59;
-    private javax.swing.JTextArea jTextArea6;
-    private javax.swing.JTextArea jTextArea60;
-    private javax.swing.JTextArea jTextArea61;
-    private javax.swing.JTextArea jTextArea62;
-    private javax.swing.JTextArea jTextArea63;
-    private javax.swing.JTextArea jTextArea64;
-    private javax.swing.JTextArea jTextArea65;
-    private javax.swing.JTextArea jTextArea66;
-    private javax.swing.JTextArea jTextArea67;
-    private javax.swing.JTextArea jTextArea68;
-    private javax.swing.JTextArea jTextArea69;
-    private javax.swing.JTextArea jTextArea7;
-    private javax.swing.JTextArea jTextArea70;
-    private javax.swing.JTextArea jTextArea71;
-    private javax.swing.JTextArea jTextArea72;
-    private javax.swing.JTextArea jTextArea73;
-    private javax.swing.JTextArea jTextArea74;
-    private javax.swing.JTextArea jTextArea75;
-    private javax.swing.JTextArea jTextArea76;
-    private javax.swing.JTextArea jTextArea77;
-    private javax.swing.JTextArea jTextArea78;
-    private javax.swing.JTextArea jTextArea79;
-    private javax.swing.JTextArea jTextArea8;
-    private javax.swing.JTextArea jTextArea80;
-    private javax.swing.JTextArea jTextArea81;
-    private javax.swing.JTextArea jTextArea82;
-    private javax.swing.JTextArea jTextArea83;
-    private javax.swing.JTextArea jTextArea84;
-    private javax.swing.JTextArea jTextArea85;
-    private javax.swing.JTextArea jTextArea86;
-    private javax.swing.JTextArea jTextArea87;
-    private javax.swing.JTextArea jTextArea9;
     private javax.swing.JLabel lblCarteEnMain2;
     private javax.swing.JLabel lblCarteEnMain3;
     private javax.swing.JLabel lblCarteEnMain4;
+    private javax.swing.JLabel lblImgCarte1;
+    private javax.swing.JLabel lblImgCarte2;
+    private javax.swing.JLabel lblImgCarte3;
+    private javax.swing.JLabel lblImgCarte4;
+    private javax.swing.JLabel lblImgCarte5;
+    private javax.swing.JLabel lblImgCarteChoisi;
+    private javax.swing.JLabel lblImgCarteJeu;
     private javax.swing.JLabel lblJoueur1;
     private javax.swing.JLabel lblJoueur2;
     private javax.swing.JLabel lblJoueur3;
     private javax.swing.JLabel lblJoueur4;
+    private javax.swing.JLabel lblNomCarte1;
+    private javax.swing.JLabel lblNomCarte2;
+    private javax.swing.JLabel lblNomCarte3;
+    private javax.swing.JLabel lblNomCarte4;
+    private javax.swing.JLabel lblNomCarte5;
+    private javax.swing.JLabel lblNomCarteChoisi;
     private javax.swing.JLabel lblNomCarteJeu;
-    private javax.swing.JLabel lblNomCarteJeu1;
-    private javax.swing.JLabel lblNomCarteJeu10;
-    private javax.swing.JLabel lblNomCarteJeu11;
-    private javax.swing.JLabel lblNomCarteJeu12;
-    private javax.swing.JLabel lblNomCarteJeu13;
-    private javax.swing.JLabel lblNomCarteJeu14;
-    private javax.swing.JLabel lblNomCarteJeu15;
-    private javax.swing.JLabel lblNomCarteJeu16;
-    private javax.swing.JLabel lblNomCarteJeu17;
-    private javax.swing.JLabel lblNomCarteJeu18;
-    private javax.swing.JLabel lblNomCarteJeu19;
-    private javax.swing.JLabel lblNomCarteJeu2;
-    private javax.swing.JLabel lblNomCarteJeu20;
-    private javax.swing.JLabel lblNomCarteJeu21;
-    private javax.swing.JLabel lblNomCarteJeu22;
-    private javax.swing.JLabel lblNomCarteJeu23;
-    private javax.swing.JLabel lblNomCarteJeu24;
-    private javax.swing.JLabel lblNomCarteJeu25;
-    private javax.swing.JLabel lblNomCarteJeu26;
-    private javax.swing.JLabel lblNomCarteJeu27;
-    private javax.swing.JLabel lblNomCarteJeu28;
-    private javax.swing.JLabel lblNomCarteJeu29;
-    private javax.swing.JLabel lblNomCarteJeu3;
-    private javax.swing.JLabel lblNomCarteJeu30;
-    private javax.swing.JLabel lblNomCarteJeu31;
-    private javax.swing.JLabel lblNomCarteJeu32;
-    private javax.swing.JLabel lblNomCarteJeu33;
-    private javax.swing.JLabel lblNomCarteJeu34;
-    private javax.swing.JLabel lblNomCarteJeu35;
-    private javax.swing.JLabel lblNomCarteJeu36;
-    private javax.swing.JLabel lblNomCarteJeu37;
-    private javax.swing.JLabel lblNomCarteJeu38;
-    private javax.swing.JLabel lblNomCarteJeu4;
-    private javax.swing.JLabel lblNomCarteJeu5;
-    private javax.swing.JLabel lblNomCarteJeu6;
-    private javax.swing.JLabel lblNomCarteJeu7;
-    private javax.swing.JLabel lblNomCarteJeu8;
-    private javax.swing.JLabel lblNomCarteJeu9;
     private javax.swing.JLabel lblPaquet;
     private javax.swing.JLabel lblPtsVie1;
     private javax.swing.JLabel lblPtsVie2;
@@ -1422,7 +1012,22 @@ public class VuePartie extends javax.swing.JFrame {
     private javax.swing.JLabel lblUsineUn2;
     private javax.swing.JLabel lblUsineUn3;
     private javax.swing.JLabel lblUsineUn4;
+    private javax.swing.JPanel pnlCarte1;
+    private javax.swing.JPanel pnlCarte2;
+    private javax.swing.JPanel pnlCarte3;
+    private javax.swing.JPanel pnlCarte4;
+    private javax.swing.JPanel pnlCarte5;
+    private javax.swing.JPanel pnlCarteChoisi;
+    private javax.swing.JPanel pnlCarteJeu;
     private javax.swing.JPanel pnlInformation;
     private javax.swing.JPanel pnlStatut;
+    private javax.swing.JTextArea txtDescriptionCarte1;
+    private javax.swing.JTextArea txtDescriptionCarte2;
+    private javax.swing.JTextArea txtDescriptionCarte3;
+    private javax.swing.JTextArea txtDescriptionCarte4;
+    private javax.swing.JTextArea txtDescriptionCarte5;
+    private javax.swing.JTextArea txtDescriptionCarteChoisi;
+    private javax.swing.JTextArea txtDescriptionCarteJeu;
+    private javax.swing.JTextArea txtEvenement;
     // End of variables declaration//GEN-END:variables
 }
