@@ -51,7 +51,7 @@ public class DefenceCard extends Card {
 	@Override
 	public String toString() {
 		return "DefenseCard [type()=" + getType() + ", name()=" + getName()
-				+ ", image()=" + getImage() + ", description="
+				+ ", image()=" + getImagePath() + ", description="
 				+ getDescription() + ", reflective=" + reflective
 				+ ", cancelPower=" + cancelPower + "]";
 	}

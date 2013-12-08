@@ -1,5 +1,9 @@
 package mad.cards;
 
+import java.net.URL;
+
+import javax.swing.ImageIcon;
+
 import org.json.simple.JSONObject;
 
 /**
@@ -9,7 +13,8 @@ import org.json.simple.JSONObject;
 public abstract class Card implements Cloneable {
 	private String type;
 	private String name;
-	private String image;
+	private String imagePath;
+	private ImageIcon image;
 	private String description;
 
 	/**
@@ -55,18 +60,36 @@ public abstract class Card implements Cloneable {
 	 * 
 	 * @return le chemin d’accès de l’image
 	 */
-	public String getImage() {
-		return image;
+	public String getImagePath() {
+		return imagePath;
 	}
 
 	/**
 	 * Change le chemin d’accès de l’image.
 	 * 
-	 * @param image
+	 * @param imagePath
 	 *            le nouveau chemin d’accès de l’image
 	 */
-	public void setImage(String image) {
-		this.image = image;
+	public void setImagePath(String imagePath) {
+		this.image = null;
+		this.imagePath = imagePath;
+	}
+	
+	/**
+	 * 
+	 * @return l’image de la carte.
+	 */
+	public ImageIcon getImage() {
+		if (image == null) {
+			URL url = Card.class.getResource(imagePath);
+			
+			if (url == null) {
+				throw new RuntimeException("Image introuvable.");
+			} else {
+				image = new ImageIcon(url);
+			}
+		}
+		return image;
 	}
 
 	/**
@@ -105,7 +128,7 @@ public abstract class Card implements Cloneable {
 	public void fromJson(JSONObject jsonObject) {
 		setType(jsonObject.get("type").toString());
 		setName(jsonObject.get("name").toString());
-		setImage(jsonObject.get("image").toString());
+		setImagePath(jsonObject.get("image").toString());
 		setDescription(jsonObject.get("description").toString());
 	}
 }

@@ -49,7 +49,7 @@ public class ConstructionCard extends Card {
 	@Override
 	public String toString() {
 		return "ConstructionCard [type()=" + getType() + ", name()="
-				+ getName() + ", image()=" + getImage() + ", description()="
+				+ getName() + ", image()=" + getImagePath() + ", description()="
 				+ getDescription() + ", attackFactor=" + attackFactor
 				+ ", defenseFactor=" + defenseFactor + "]";
 	}

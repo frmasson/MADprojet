@@ -204,7 +204,7 @@ public class AttackCard extends Card {
 	@Override
 	public String toString() {
 		return "AttackCard [type=" + getType() + ", name=" + getName()
-				+ ", image=" + getImage() + ", description=" + getDescription()
+				+ ", image=" + getImagePath() + ", description=" + getDescription()
 				+ ", damageMin=" + damageMin + ", damageMax=" + damageMax
 				+ ", resistance=" + resistance + ", reflexible=" + reflexible
 				+ ", cancelable=" + cancelable + ", areaOfEffect="
