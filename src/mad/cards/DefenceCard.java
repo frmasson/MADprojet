@@ -6,7 +6,7 @@ import org.json.simple.JSONObject;
  * Une carte de défense.
  * 
  */
-public class DefenseCard extends Card {
+public class DefenceCard extends Card {
 	private boolean reflective;
 	private int cancelPower;
 
@@ -57,8 +57,8 @@ public class DefenseCard extends Card {
 	}
 
 	@Override
-	public DefenseCard clone() {
-		return (DefenseCard) super.clone();
+	public DefenceCard clone() {
+		return (DefenceCard) super.clone();
 	}
 
 	@Override

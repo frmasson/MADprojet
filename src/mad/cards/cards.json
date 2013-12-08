@@ -1,0 +1,154 @@
+{
+    "attack1": {
+        "type": "Attack",
+        "name": "Missile",
+        "description": "Le missile de base. Ça fait la job, mais sans plus.",
+        "image": "default.png",
+        "damage_min": 1,
+        "damage_max": 10,
+        "resistance": 0,
+        "reflect": true,
+        "cancelable": 1,
+        "area_of_effect": false
+    },
+    "attack2": {
+        "type": "Attack",
+        "name": "Attaque chiurgicale",
+        "description": "",
+        "image": "default.png",
+        "damage_min": 5,
+        "damage_max": 5,
+        "resistance": 1,
+        "reflect": true,
+        "cancelable": 2,
+        "area_of_effect": false
+    },
+    "attack3": {
+        "type": "Attack",
+        "name": "Missile furtif",
+        "description": "",
+        "image": "default.png",
+        "damage_min": 0,
+        "damage_max": 10,
+        "resistance": 2,
+        "reflect": false,
+        "cancelable": 0,
+        "area_of_effect": false
+    },
+    "attack4": {
+        "type": "Attack",
+        "name": "Pluie de missiles",
+        "description": "",
+        "image": "default.png",
+        "damage_min": 1,
+        "damage_max": 10,
+        "resistance": 0,
+        "reflect": true,
+        "cancelable": 1,
+        "area_of_effect": true
+    },
+    "attack5": {
+        "type": "Attack",
+        "name": "Gros missile",
+        "description": "",
+        "image": "default.png",
+        "damage_min": 5,
+        "damage_max": 20,
+        "resistance": 1,
+        "reflect": true,
+        "cancelable": 1,
+        "area_of_effect": false
+    },
+    "attack6": {
+        "type": "Attack",
+        "name": "Tsar Bomba",
+        "description": "",
+        "image": "default.png",
+        "damage_min": 50,
+        "damage_max": 50,
+        "resistance": 2,
+        "reflect": true,
+        "cancelable": 2,
+        "area_of_effect": false
+    },
+    "defense1": {
+        "type": "Defence",
+        "name": "Anti-missile",
+        "description": "",
+        "image": "default.png",
+        "reflect": false,
+        "cancel": 1
+    },
+    "defense2": {
+        "type": "Defence",
+        "name": "Laser satelite",
+        "description": "",
+        "image": "default.png",
+        "reflect": false,
+        "cancel": 2
+    },
+    "defense3": {
+        "type": "Defence",
+        "name": "Espion",
+        "description": "",
+        "image": "default.png",
+        "reflect": true,
+        "cancel": 0
+    },
+    "factory1": {
+        "type": "Factory",
+        "name": "Usine de bombes atomiques",
+        "description": "",
+        "image": "default.png",
+        "factor_attack": 1,
+        "factor_defense": 0
+    },
+    "factory2": {
+        "type": "Factory",
+        "name": "Usine de bombes thermonucléaires",
+        "description": "",
+        "image": "default.png",
+        "factor_attack": 2,
+        "factor_defense": 0
+    },
+    "factory3": {
+        "type": "Factory",
+        "name": "Usine de bombes d'antimatière",
+        "description": "",
+        "image": "default.png",
+        "factor_attack": 3,
+        "factor_defense": 0
+    },
+    "research_center1": {
+        "type": "ResearchCenter",
+        "name": "",
+        "description": "Centre de recherche sur les matériaux",
+        "image": "default.png",
+        "factor_attack": 0,
+        "factor_defense": 1
+    },
+    "research_center2": {
+        "type": "ResearchCenter",
+        "name": "",
+        "description": "Centre de recherche sur les radiofréquences",
+        "image": "default.png",
+        "factor_attack": 0,
+        "factor_defense": 2
+    },
+    "research_center3": {
+        "type": "ResearchCenter",
+        "name": "",
+        "description": "Centre de recherche sur l'intélligence artifielle",
+        "image": "default.png",
+        "factor_attack": 0,
+        "factor_defense": 3
+    },
+    "research_center4": {
+        "type": "ResearchCenter",
+        "name": "Centre de recherche sur la physique quantique",
+        "description": "",
+        "image": "default.png",
+        "factor_attack": 2,
+        "factor_defense": 2
+    }
+}

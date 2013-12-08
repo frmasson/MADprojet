@@ -219,11 +219,11 @@ public class AttackCard extends Card {
 	@Override
 	public void fromJson(JSONObject jsonObject) {
 		super.fromJson(jsonObject);
-		setAreaOfEffect((Boolean) jsonObject.get("area-of-effect"));
+		setAreaOfEffect((Boolean) jsonObject.get("area_of_effect"));
 		setCancelable(((Number) jsonObject.get("cancelable")).intValue());
-		setDamageMax(((Number) jsonObject.get("damage-max")).intValue());
-		setDamageMin(((Number) jsonObject.get("damage-min")).intValue());
-		setReflexible((Boolean) jsonObject.get("reflexible"));
+		setDamageMax(((Number) jsonObject.get("damage_max")).intValue());
+		setDamageMin(((Number) jsonObject.get("damage_min")).intValue());
+		setReflexible((Boolean) jsonObject.get("reflect"));
 		setResistance(((Number) jsonObject.get("resistance")).floatValue());
 	}
 }

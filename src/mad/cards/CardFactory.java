@@ -58,7 +58,7 @@ public abstract class CardFactory {
 		if (CARD_CLASSES == null) {
 			CARD_CLASSES = new HashMap<String, Class<? extends Card>>();
 			CARD_CLASSES.put("Attack", AttackCard.class);
-			CARD_CLASSES.put("Defense", DefenseCard.class);
+			CARD_CLASSES.put("Defence", DefenceCard.class);
 			CARD_CLASSES.put("Factory", ConstructionCard.class);
 			CARD_CLASSES.put("ResearchCenter", ConstructionCard.class);
 		}
@@ -86,6 +86,7 @@ public abstract class CardFactory {
 			Iterator<Map.Entry<Object, Object>> i = map.entrySet().iterator();
 			Map.Entry<Object, Object> entry;
 
+			cards = new HashMap<String, Card>();
 			while (i.hasNext()) {
 				entry = i.next();
 				cards.put(entry.getKey().toString(),
@@ -103,6 +104,7 @@ public abstract class CardFactory {
 				JSONObject jsonObject = (JSONObject) item;
 				CardSetModel model = new CardSetModel();
 
+				cardSetModels = new HashMap<String, CardSetModel>();
 				model.fromJson(jsonObject);
 				cardSetModels.put(model.getName(), model);
 			}
@@ -115,7 +117,7 @@ public abstract class CardFactory {
 	 * @return l’ensemble des identifiants des cartes qu’il est possible de
 	 *         créer
 	 */
-	public Set<String> getCardIds() {
+	public static Set<String> getCardIds() {
 		return getCards().keySet();
 	}
 
@@ -126,7 +128,7 @@ public abstract class CardFactory {
 	 *            identifiant de la carte
 	 * @return la carte
 	 */
-	public Card getCard(String id) {
+	public static Card getCard(String id) {
 		return getCards().get(id).clone();
 	}
 
@@ -135,7 +137,7 @@ public abstract class CardFactory {
 	 * @return l’ensemble des noms des ensembles de cartes qu’il est possible de
 	 *         créer
 	 */
-	public Set<String> getCardSetNames() {
+	public static Set<String> getCardSetNames() {
 		return getCardSetModels().keySet();
 	}
 
@@ -146,7 +148,7 @@ public abstract class CardFactory {
 	 *            le nom de l’ensemble
 	 * @return une nouvelle instance de l’ensemble de carte spécifié
 	 */
-	public CardSet getCardSet(String name) {
+	public static CardSet getCardSet(String name) {
 		CardSet result = new CardSet();
 		CardSetModel model = getCardSetModels().get(name);
 		Iterator<Map.Entry<String, Integer>> i = model.iterator();
