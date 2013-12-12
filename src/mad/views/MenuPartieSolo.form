@@ -23,12 +23,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlParametresSolo" alignment="0" max="32767" attributes="0"/>
+          <Component id="pnlParametresSolo" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlParametresSolo" alignment="0" max="32767" attributes="0"/>
+          <Component id="pnlParametresSolo" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -47,24 +47,32 @@
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblParamatresSolo" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="btnDemarrer" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblPointsVie" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblNbOpposants" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblEnsemble" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lblPointsVie" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblNbOpposants" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblEnsemble" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="btnDemarrer" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="cboEnsemble" max="32767" attributes="0"/>
                                   <Component id="cboNbOpposants" alignment="0" max="32767" attributes="0"/>
                                   <Component id="cboPointsVie" alignment="0" pref="99" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="btnDemarrer1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="213" max="32767" attributes="0"/>
+                  <EmptySpace pref="31" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -88,9 +96,12 @@
                       <Component id="lblEnsemble" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cboEnsemble" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="btnDemarrer" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="132" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnDemarrer" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDemarrer1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="58" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -162,8 +173,19 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnDemarrer">
           <Properties>
+            <Property name="text" type="java.lang.String" value="Annuler"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnDemarrerMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnDemarrer1">
+          <Properties>
             <Property name="text" type="java.lang.String" value="Lancer la partie"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnDemarrer1MouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

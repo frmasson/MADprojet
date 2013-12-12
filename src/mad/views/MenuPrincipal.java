@@ -58,6 +58,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnPartieSolo = new javax.swing.JButton();
         btnPartieMultijoueur = new javax.swing.JButton();
         btnOptions = new javax.swing.JButton();
+        btnQuitter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("M.A.D. le jeu");
@@ -70,6 +71,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         btnPartieSolo.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnPartieSolo.setText("Partie solo");
+        btnPartieSolo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnPartieSoloMouseClicked(evt);
+            }
+        });
 
         btnPartieMultijoueur.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnPartieMultijoueur.setText("Partie multijoueur");
@@ -78,6 +84,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnOptions.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         btnOptions.setText("Options");
         btnOptions.setEnabled(false);
+
+        btnQuitter.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        btnQuitter.setText("Quitter");
+        btnQuitter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnQuitterMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMenuPrincipalLayout = new javax.swing.GroupLayout(pnlMenuPrincipal);
         pnlMenuPrincipal.setLayout(pnlMenuPrincipalLayout);
@@ -93,7 +107,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
                         .addGroup(pnlMenuPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnPartieMultijoueur, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnPartieSolo, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnQuitter, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(251, Short.MAX_VALUE))
         );
         pnlMenuPrincipalLayout.setVerticalGroup(
@@ -107,7 +122,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 .addComponent(btnPartieMultijoueur, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(btnOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(btnQuitter, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -118,11 +135,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnlMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPartieSoloMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPartieSoloMouseClicked
+        this.setVisible(false);
+        new MenuPartieSolo().start();
+        this.dispose();
+    }//GEN-LAST:event_btnPartieSoloMouseClicked
+
+    private void btnQuitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuitterMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnQuitterMouseClicked
 
     
     public void start() {
@@ -141,6 +170,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnOptions;
     private javax.swing.JButton btnPartieMultijoueur;
     private javax.swing.JButton btnPartieSolo;
+    private javax.swing.JButton btnQuitter;
     private javax.swing.JLabel lblTitre;
     private javax.swing.JPanel pnlMenuPrincipal;
     // End of variables declaration//GEN-END:variables

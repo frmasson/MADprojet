@@ -17,8 +17,8 @@ public class MADproto {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //MenuPrincipal vue = new MenuPrincipal();
-        VuePartie vue = new VuePartie();
+        MenuPrincipal vue = new MenuPrincipal();
+        //VuePartie vue = new VuePartie();
         vue.start();
     }
 }

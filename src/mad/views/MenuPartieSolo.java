@@ -4,6 +4,8 @@
  */
 package mad.views;
 
+import mad.cards.CardFactory;
+
 /**
  *
  * @author Francois
@@ -41,7 +43,8 @@ public class MenuPartieSolo extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MenuPartieSolo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
+        cboEnsemble.setModel(new javax.swing.DefaultComboBoxModel(CardFactory.getCardSetNames().toArray()));
     }
 
     /**
@@ -62,6 +65,7 @@ public class MenuPartieSolo extends javax.swing.JFrame {
         cboEnsemble = new javax.swing.JComboBox();
         lblParamatresSolo = new javax.swing.JLabel();
         btnDemarrer = new javax.swing.JButton();
+        btnDemarrer1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("M.A.D. Partie solo");
@@ -84,7 +88,19 @@ public class MenuPartieSolo extends javax.swing.JFrame {
         lblParamatresSolo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblParamatresSolo.setText("Paramètres de la partie");
 
-        btnDemarrer.setText("Lancer la partie");
+        btnDemarrer.setText("Annuler");
+        btnDemarrer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDemarrerMouseClicked(evt);
+            }
+        });
+
+        btnDemarrer1.setText("Lancer la partie");
+        btnDemarrer1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDemarrer1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlParametresSoloLayout = new javax.swing.GroupLayout(pnlParametresSolo);
         pnlParametresSolo.setLayout(pnlParametresSoloLayout);
@@ -94,19 +110,24 @@ public class MenuPartieSolo extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblParamatresSolo)
-                    .addGroup(pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(btnDemarrer)
-                        .addGroup(pnlParametresSoloLayout.createSequentialGroup()
-                            .addGroup(pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblPointsVie)
-                                .addComponent(lblNbOpposants)
-                                .addComponent(lblEnsemble))
-                            .addGap(30, 30, 30)
+                    .addGroup(pnlParametresSoloLayout.createSequentialGroup()
+                        .addGroup(pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlParametresSoloLayout.createSequentialGroup()
+                                .addGroup(pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblPointsVie)
+                                    .addComponent(lblNbOpposants)
+                                    .addComponent(lblEnsemble))
+                                .addGap(22, 22, 22))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlParametresSoloLayout.createSequentialGroup()
+                                .addComponent(btnDemarrer, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(cboEnsemble, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cboNbOpposants, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cboPointsVie, 0, 99, Short.MAX_VALUE)))))
-                .addContainerGap(213, Short.MAX_VALUE))
+                                .addComponent(cboPointsVie, 0, 99, Short.MAX_VALUE))
+                            .addComponent(btnDemarrer1))))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         pnlParametresSoloLayout.setVerticalGroup(
             pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,24 +146,40 @@ public class MenuPartieSolo extends javax.swing.JFrame {
                 .addGroup(pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEnsemble)
                     .addComponent(cboEnsemble, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addComponent(btnDemarrer)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addGroup(pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDemarrer)
+                    .addComponent(btnDemarrer1))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlParametresSolo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlParametresSolo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlParametresSolo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlParametresSolo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnDemarrerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDemarrerMouseClicked
+        this.setVisible(false);
+        new MenuPrincipal().start();
+        this.dispose();
+    }//GEN-LAST:event_btnDemarrerMouseClicked
+
+    private void btnDemarrer1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDemarrer1MouseClicked
+        this.setVisible(false);
+        new VuePartie(Integer.parseInt((String)cboNbOpposants.getSelectedItem()),
+                Integer.parseInt((String)cboPointsVie.getSelectedItem()),
+                CardFactory.getCardSet((String)cboEnsemble.getSelectedItem())).start();
+        this.dispose();
+    }//GEN-LAST:event_btnDemarrer1MouseClicked
 
     public void start() {
         final MenuPartieSolo me = this;
@@ -158,6 +195,7 @@ public class MenuPartieSolo extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDemarrer;
+    private javax.swing.JButton btnDemarrer1;
     private javax.swing.JComboBox cboEnsemble;
     private javax.swing.JComboBox cboNbOpposants;
     private javax.swing.JComboBox cboPointsVie;
