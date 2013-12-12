@@ -109,15 +109,16 @@ public abstract class Player {
         //@TODO mettre la carte dans le paquet du talon
     }
 
-    public void playCard(Card card) {
+    public Card playCard(Card card) {
         //card.play();
         //@TODO ???
         discardCard(card);
+        return card;
     }
     
-    public void playCard(int pos) {
+    public Card playCard(int pos) {
         //slectionner la carte a la postion donnée
         Card card = cards.get(pos);
-        playCard(card);
+        return playCard(card);
     }
 }

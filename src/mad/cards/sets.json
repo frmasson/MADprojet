@@ -16,4 +16,14 @@
             "research_center3": 1,
             "research_center4": 1
         }
-    }]
+    },
+    {"name": "Seulement des cartes d'attaque",
+        "cards": {"attack1": 20,
+            "attack2": 20,
+            "attack3": 20,
+            "attack4": 20,
+            "attack4": 20,
+            "attack6": 20            
+        }
+    }
+    ]

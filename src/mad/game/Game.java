@@ -1,8 +1,11 @@
 package mad.game;
 
 import java.util.ArrayList;
+import mad.cards.AttackCard;
 import mad.cards.Card;
 import mad.cards.CardSet;
+import mad.cards.ConstructionCard;
+import mad.cards.DefenceCard;
 import mad.views.VuePartie;
 
 /**
@@ -17,6 +20,8 @@ public class Game {
     private int currentPlayer;
     private CardSet cards;
     private CardSet discardedCards;
+    private Card currentlyPlayedCard;
+    private Card previousPlayedCard;
     private int startingHitPoints;
     private int nbTours = 0;
     private int nbPlayers = 0;
@@ -105,7 +110,7 @@ public class Game {
         this.nbTours++;
     }
 
-    public void nextPlayerRound() {
+    public void nextRound() {
         if (!isEnded()) {
             currentPlayer = (currentPlayer + 1) % nbPlayers;
             playRound();
@@ -114,42 +119,86 @@ public class Game {
 
     public void playRound() {
         //grosso modo, déclanché playerround... qui fait??? 
-        
+
         //playerRound.actionPerformed(null);
-       // playerRound = new PlayerRound(this, players.get(currentPlayer));
-        if (currentPlayer == 0){
+        // playerRound = new PlayerRound(this, players.get(currentPlayer));
+        if (currentPlayer == 0) {
             unlockPlayerCards();
-        }      
-        
+        }
+
     }
-    
-    public void playPlayerCard(int pos){
-        players.get(0).playCard(pos);
+
+    public void playerPlayCard(int pos) {
+        previousPlayedCard = currentlyPlayedCard;
+        currentlyPlayedCard = players.get(0).playCard(pos);
+        //les cartes ne sont plus unlockées
+        //vue.???
+        if (currentlyPlayedCard.getClass() == AttackCard.class) {
+            AttackCard currentlyPlayedAttackCard = (AttackCard) currentlyPlayedCard;
+            if (currentlyPlayedAttackCard.isAreaOfEffect()) {
+                
+                applyEffects(null, currentlyPlayedAttackCard);
+            }
+            // la vu doit selectionner une cible
+            //vue.???
+        } else if (currentlyPlayedCard.getClass() == DefenceCard.class) {
+            // la cible est probablement le current player
+            playerPlayDefenseCard(pos);
+        } else if (currentlyPlayedCard.getClass() == ConstructionCard.class) {
+            applyEffects(null, (ConstructionCard) currentlyPlayedCard);
+        }
     }
-    
-    public void playPlayerDefenseCard(int pos){
+
+    public void playerSelectTarget(int pos) {
+        Player target = players.get(pos);
+        applyEffects(target, (AttackCard) currentlyPlayedCard);
+    }
+
+    public void playerPlayDefenseCard(int pos) {
+        currentlyPlayedCard = players.get(0).playCard(pos);
         players.get(0).playCard(pos);
     }
 
-    public void playNPCCard(Player player){
-        
+    public void playNPCCard(Player player) {
     }
-    
-    public void playNPCDefenseCard(Player player){
-    
+
+    public void playNPCDefenseCard(Player player) {
     }
-       
-    
+
     public boolean isEnded() {
         return (nbPlayers - nbPlayerAlive) > 1;
     }
-    
-   private void unlockPlayerCards(){
-       boolean playableCards[] = determinePlayableCards();
-        vue.unlockCards(playableCards);
+
+    private void unlockPlayerCards() {
+        boolean playableCards[] = determinePlayableCards();
+        //vue.unlockCards(playableCards);
     }
-    
-    private boolean[] determinePlayableCards(){
-        return null;        
+
+    private boolean[] determinePlayableCards() {
+        return null;
+    }
+
+    private void applyEffects(Player target, AttackCard card) {
+        int dmg = randomize(card.getDamageMin(), card.getDamageMax());
+        if (target == null) {
+            if (card.isAreaOfEffect()) {
+                for (Player player : players) {
+                    player.substractHitPoints(dmg);
+                }
+            }
+        } else {
+            target.substractHitPoints(dmg);
+        }
+
+    }
+
+    private void applyEffects(Player target, DefenceCard card) {
+    }
+
+    private void applyEffects(Player target, ConstructionCard card) {
+    }
+
+    private int randomize(int minValue, int maxValue) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
