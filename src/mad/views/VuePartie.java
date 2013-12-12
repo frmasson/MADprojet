@@ -175,6 +175,7 @@ public class VuePartie extends javax.swing.JFrame {
         lblTour = new javax.swing.JLabel();
         lblPaquet = new javax.swing.JLabel();
         lblTalon = new javax.swing.JLabel();
+        btnAbandonner = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("M.A.D. Partie");
@@ -748,7 +749,7 @@ public class VuePartie extends javax.swing.JFrame {
                         .addComponent(pnlCarte4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(pnlCarte5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap())))
         );
         PnlInfoPersonnelLayout.setVerticalGroup(
             PnlInfoPersonnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -893,6 +894,13 @@ public class VuePartie extends javax.swing.JFrame {
         lblTalon.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblTalon.setText("31");
 
+        btnAbandonner.setText("Abandonner");
+        btnAbandonner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAbandonnerMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlInformationLayout = new javax.swing.GroupLayout(pnlInformation);
         pnlInformation.setLayout(pnlInformationLayout);
         pnlInformationLayout.setHorizontalGroup(
@@ -900,6 +908,7 @@ public class VuePartie extends javax.swing.JFrame {
             .addGroup(pnlInformationLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAbandonner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlInformationLayout.createSequentialGroup()
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -929,7 +938,9 @@ public class VuePartie extends javax.swing.JFrame {
                 .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
                     .addComponent(lblTalon))
-                .addContainerGap(242, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAbandonner)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PnlPartieLayout = new javax.swing.GroupLayout(PnlPartie);
@@ -992,6 +1003,10 @@ public class VuePartie extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(null, "pew");
     }//GEN-LAST:event_PnlCarteEnJeuMouseClicked
 
+    private void btnAbandonnerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAbandonnerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAbandonnerMouseClicked
+
     public void start() {
         final VuePartie me = this;
         /*
@@ -1011,6 +1026,7 @@ public class VuePartie extends javax.swing.JFrame {
     private javax.swing.JPanel PnlCarteEnJeu;
     private javax.swing.JPanel PnlInfoPersonnel;
     private javax.swing.JPanel PnlPartie;
+    private javax.swing.JButton btnAbandonner;
     private javax.swing.JButton btnAction1;
     private javax.swing.JButton btnAction2;
     private javax.swing.JLabel jLabel1;
@@ -1143,6 +1159,10 @@ public class VuePartie extends javax.swing.JFrame {
      * description du tour du joueur
      */
     public void AnnouncePlayerAction(String announce) {
+        
+    }
+    
+    public void endGame(String winner) {
         
     }
 }

@@ -127,7 +127,7 @@ public class MenuPartieSolo extends javax.swing.JFrame {
                                 .addComponent(cboNbOpposants, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(cboPointsVie, 0, 99, Short.MAX_VALUE))
                             .addComponent(btnDemarrer1))))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         pnlParametresSoloLayout.setVerticalGroup(
             pnlParametresSoloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +157,7 @@ public class MenuPartieSolo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlParametresSolo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(pnlParametresSolo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
