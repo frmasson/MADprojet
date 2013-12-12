@@ -13,6 +13,8 @@ import java.util.List;
 public class CardSet implements Collection<Card> {
 	private String name;
 	private List<Card> cards = new ArrayList<Card>();
+        
+        
 
 	/**
 	 * 

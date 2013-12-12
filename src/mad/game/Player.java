@@ -15,22 +15,22 @@ import mad.cards.CardSet;
 public abstract class Player {
 
     private String name;
-    private int hitPoints;
+    private int hitPoints; 
     private ResearchCenter researchCenter;
     private ArrayList<Factory> factories;
-    private CardSet cards;
+    private ArrayList<Card> cards;
     public static final int NBMAXFACTORIES = 2;
     public static final int NBMAXCARDS = 5;
 
     public Player(){
         hitPoints = 50;
-        cards = new CardSet();
+        cards = new ArrayList<>();
         factories = new ArrayList<>();        
     }
     
     public Player(int hitPoints){
         this.hitPoints = hitPoints;
-        this.cards = new CardSet();
+        this.cards = new ArrayList<>();
         this.factories = new ArrayList<>();        
     }   
     
@@ -76,19 +76,28 @@ public abstract class Player {
         return factories;
     }
 
-    public void ajouterFactory(Factory factory) {
+    public void addFactory(Factory factory) {
         if (factories.size() < NBMAXFACTORIES) {
             factories.add(factory);
         } else {
             //@TODO le joueur doit retirer une de ses anciennes usines
+            // solution temporaire, remplacer une factory automatiquement
+            factories.remove(0);
+            factories.add(factory);
         }
     }
 
-    public CardSet getCards() {
+    public ArrayList<Card> getCards() {
         return cards;
     }
 
     public void setCards(CardSet cards) {
+        for (Card card : cards){
+            this.cards.add(card);
+        }        
+    }
+    
+    public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }
 
@@ -105,9 +114,36 @@ public abstract class Player {
         //@TODO mettre la carte dans le paquet du talon
     }
 
-    public void playCard(Card card) {
+    public Card playCard(Card card) {
         //card.play();
         //@TODO ???
         discardCard(card);
+        return card;
     }
+    
+    public Card playCard(int pos) {
+        //slectionner la carte a la postion donnée
+        Card card = cards.get(pos);
+        return playCard(card);
+    }
+    
+   public int getDefenceBonus(){
+       if (researchCenter != null){
+           return researchCenter.getDefenceFactor();
+       }
+       return 0;
+   }
+   
+   public int getAttackMultiplier(){
+       int attackMultiplier = 0;
+       if (factories != null){
+           for(Factory factory : factories){
+               attackMultiplier += factory.getAttackFactor();
+           }
+       }
+       if (researchCenter != null){
+           attackMultiplier += researchCenter.getAttackFactor();
+       }
+       return attackMultiplier;
+   }
 }

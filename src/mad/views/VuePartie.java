@@ -80,7 +80,7 @@ public class VuePartie extends javax.swing.JFrame {
         }
         //</editor-fold>
         
-        partie = new Game(nbJoueur,ptsVie,cards);
+        partie = new Game(this,nbJoueur,ptsVie,cards);
     }
 
     /**
@@ -748,7 +748,7 @@ public class VuePartie extends javax.swing.JFrame {
                         .addComponent(pnlCarte4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(pnlCarte5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         PnlInfoPersonnelLayout.setVerticalGroup(
             PnlInfoPersonnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -929,7 +929,7 @@ public class VuePartie extends javax.swing.JFrame {
                 .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
                     .addComponent(lblTalon))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PnlPartieLayout = new javax.swing.GroupLayout(PnlPartie);
