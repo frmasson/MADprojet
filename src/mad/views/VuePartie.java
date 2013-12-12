@@ -4,7 +4,9 @@
  */
 package mad.views;
 
+import java.awt.Color;
 import javax.swing.JOptionPane;
+import mad.cards.Card;
 import mad.cards.CardSet;
 import mad.game.Game;
 
@@ -17,6 +19,9 @@ public class VuePartie extends javax.swing.JFrame {
     private enum Phase {ATTAQUE, TARGETING, DEFENSE, PASSE, USINE};
     private Game partie;
     private Phase phaseJeu;
+    private int selection;
+    private Color defaut = new Color(240, 240, 240);
+    private Color actif = new Color(102, 255, 102);
 
     /**
      * Creates new form VuePartie
@@ -184,6 +189,7 @@ public class VuePartie extends javax.swing.JFrame {
         PnlPartie.setBackground(new java.awt.Color(153, 153, 255));
         PnlPartie.setPreferredSize(new java.awt.Dimension(880, 792));
 
+        PnlAdversaire1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         PnlAdversaire1.setEnabled(false);
         PnlAdversaire1.setPreferredSize(new java.awt.Dimension(485, 100));
 
@@ -226,20 +232,22 @@ public class VuePartie extends javax.swing.JFrame {
                         .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCarteEnMain2)
                             .addComponent(lblPtsVie2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblUsineUn2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
                 .addComponent(lblUsineDeux2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblRecherche2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         PnlAdversaire1Layout.setVerticalGroup(
             PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlAdversaire1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PnlAdversaire1Layout.createSequentialGroup()
+                .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblUsineUn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblRecherche2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(PnlAdversaire1Layout.createSequentialGroup()
                         .addComponent(lblJoueur2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -248,13 +256,13 @@ public class VuePartie extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(lblCarteEnMain2)))
-                    .addComponent(lblUsineUn2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblUsineDeux2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblRecherche2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                            .addComponent(lblCarteEnMain2))
+                        .addGap(0, 10, Short.MAX_VALUE))
+                    .addComponent(lblUsineDeux2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
+        PnlAdversaire2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         PnlAdversaire2.setEnabled(false);
         PnlAdversaire2.setPreferredSize(new java.awt.Dimension(99, 100));
 
@@ -286,7 +294,7 @@ public class VuePartie extends javax.swing.JFrame {
         PnlAdversaire2Layout.setHorizontalGroup(
             PnlAdversaire2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlAdversaire2Layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(PnlAdversaire2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PnlAdversaire2Layout.createSequentialGroup()
                         .addGroup(PnlAdversaire2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,41 +305,41 @@ public class VuePartie extends javax.swing.JFrame {
                             .addComponent(lblCarteEnMain3)
                             .addComponent(lblPtsVie3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(lblJoueur3))
-                .addGap(16, 16, 16)
+                .addGap(22, 22, 22)
                 .addComponent(lblUsineUn3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblUsineDeux3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblRecherche3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         PnlAdversaire2Layout.setVerticalGroup(
             PnlAdversaire2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PnlAdversaire2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(PnlAdversaire2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(PnlAdversaire2Layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
+                .addGroup(PnlAdversaire2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlAdversaire2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
                         .addGroup(PnlAdversaire2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblUsineDeux3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblRecherche3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblRecherche3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblUsineUn3, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PnlAdversaire2Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(lblPtsVie3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblCarteEnMain3))
-                    .addGroup(PnlAdversaire2Layout.createSequentialGroup()
-                        .addComponent(lblJoueur3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6))
-                    .addGroup(PnlAdversaire2Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(lblUsineUn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(PnlAdversaire2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(PnlAdversaire2Layout.createSequentialGroup()
+                                .addComponent(lblPtsVie3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblCarteEnMain3))
+                            .addGroup(PnlAdversaire2Layout.createSequentialGroup()
+                                .addComponent(lblJoueur3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6)))))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
+        PnlAdversaire3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         PnlAdversaire3.setEnabled(false);
         PnlAdversaire3.setPreferredSize(new java.awt.Dimension(440, 100));
 
@@ -374,11 +382,11 @@ public class VuePartie extends javax.swing.JFrame {
                         .addGroup(PnlAdversaire3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCarteEnMain4)
                             .addComponent(lblPtsVie4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(21, 21, 21)
+                .addGap(29, 29, 29)
                 .addComponent(lblUsineUn4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblUsineDeux4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblRecherche4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -402,9 +410,10 @@ public class VuePartie extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jLabel7))))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
+        PnlInfoPersonnel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         PnlInfoPersonnel.setPreferredSize(new java.awt.Dimension(865, 10));
 
         btnAction1.setText("Jouer");
@@ -432,7 +441,7 @@ public class VuePartie extends javax.swing.JFrame {
         lblRecherche1.setText("Recherche");
         lblRecherche1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        pnlCarte1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarte1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         pnlCarte1.setEnabled(false);
         pnlCarte1.setPreferredSize(new java.awt.Dimension(110, 195));
 
@@ -463,7 +472,7 @@ public class VuePartie extends javax.swing.JFrame {
                     .addComponent(lblImgCarte1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlCarte1Layout.createSequentialGroup()
                         .addComponent(lblNomCarte1)
-                        .addGap(0, 5, Short.MAX_VALUE))
+                        .addGap(0, 1, Short.MAX_VALUE))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -475,7 +484,7 @@ public class VuePartie extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblImgCarte1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -523,7 +532,7 @@ public class VuePartie extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pnlCarte2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarte2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         pnlCarte2.setEnabled(false);
         pnlCarte2.setPreferredSize(new java.awt.Dimension(110, 195));
 
@@ -554,7 +563,7 @@ public class VuePartie extends javax.swing.JFrame {
                     .addComponent(lblImgCarte2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlCarte2Layout.createSequentialGroup()
                         .addComponent(lblNomCarte2)
-                        .addGap(0, 5, Short.MAX_VALUE))
+                        .addGap(0, 1, Short.MAX_VALUE))
                     .addComponent(jScrollPane77, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -570,7 +579,7 @@ public class VuePartie extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pnlCarte3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarte3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         pnlCarte3.setEnabled(false);
         pnlCarte3.setPreferredSize(new java.awt.Dimension(110, 195));
 
@@ -601,7 +610,7 @@ public class VuePartie extends javax.swing.JFrame {
                     .addComponent(lblImgCarte3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlCarte3Layout.createSequentialGroup()
                         .addComponent(lblNomCarte3)
-                        .addGap(0, 5, Short.MAX_VALUE))
+                        .addGap(0, 1, Short.MAX_VALUE))
                     .addComponent(jScrollPane78, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -617,7 +626,7 @@ public class VuePartie extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pnlCarte4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarte4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         pnlCarte4.setEnabled(false);
         pnlCarte4.setPreferredSize(new java.awt.Dimension(110, 195));
 
@@ -648,7 +657,7 @@ public class VuePartie extends javax.swing.JFrame {
                     .addComponent(lblImgCarte4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlCarte4Layout.createSequentialGroup()
                         .addComponent(lblNomCarte4)
-                        .addGap(0, 5, Short.MAX_VALUE))
+                        .addGap(0, 1, Short.MAX_VALUE))
                     .addComponent(jScrollPane79, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -664,7 +673,7 @@ public class VuePartie extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pnlCarte5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlCarte5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         pnlCarte5.setEnabled(false);
         pnlCarte5.setPreferredSize(new java.awt.Dimension(110, 195));
 
@@ -695,7 +704,7 @@ public class VuePartie extends javax.swing.JFrame {
                     .addComponent(lblImgCarte5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlCarte5Layout.createSequentialGroup()
                         .addComponent(lblNomCarte5)
-                        .addGap(0, 5, Short.MAX_VALUE))
+                        .addGap(0, 1, Short.MAX_VALUE))
                     .addComponent(jScrollPane87, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -775,14 +784,15 @@ public class VuePartie extends javax.swing.JFrame {
                                 .addComponent(lblUsineUn1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PnlInfoPersonnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pnlCarte1, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                            .addComponent(pnlCarte2, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                            .addComponent(pnlCarte3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                            .addComponent(pnlCarte5, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                            .addComponent(pnlCarte4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE))))
+                            .addComponent(pnlCarte1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlCarte2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlCarte3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlCarte5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlCarte4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
 
+        PnlCarteEnJeu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         PnlCarteEnJeu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 PnlCarteEnJeuMouseClicked(evt);
@@ -852,6 +862,7 @@ public class VuePartie extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        pnlStatut.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         pnlStatut.setPreferredSize(new java.awt.Dimension(865, 75));
         pnlStatut.setVerifyInputWhenFocusTarget(false);
 
@@ -869,7 +880,7 @@ public class VuePartie extends javax.swing.JFrame {
             .addGroup(pnlStatutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 844, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         pnlStatutLayout.setVerticalGroup(
             pnlStatutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -878,6 +889,8 @@ public class VuePartie extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        pnlInformation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
         jLabel24.setText("Tour:");
 
@@ -908,7 +921,7 @@ public class VuePartie extends javax.swing.JFrame {
             .addGroup(pnlInformationLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAbandonner, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAbandonner, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
                     .addGroup(pnlInformationLayout.createSequentialGroup()
                         .addComponent(jLabel24)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -919,7 +932,7 @@ public class VuePartie extends javax.swing.JFrame {
                         .addComponent(lblTalon, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlInformationLayout.createSequentialGroup()
                         .addComponent(jLabel28)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblPaquet, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -950,20 +963,18 @@ public class VuePartie extends javax.swing.JFrame {
             .addGroup(PnlPartieLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PnlPartieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PnlPartieLayout.createSequentialGroup()
-                        .addGroup(PnlPartieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pnlStatut, javax.swing.GroupLayout.DEFAULT_SIZE, 864, Short.MAX_VALUE)
-                            .addComponent(PnlInfoPersonnel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
-                        .addContainerGap())
+                    .addComponent(pnlStatut, javax.swing.GroupLayout.DEFAULT_SIZE, 878, Short.MAX_VALUE)
+                    .addComponent(PnlInfoPersonnel, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(PnlPartieLayout.createSequentialGroup()
                         .addComponent(PnlCarteEnJeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pnlInformation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PnlPartieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(PnlAdversaire3, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
-                            .addComponent(PnlAdversaire2, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)
-                            .addComponent(PnlAdversaire1, javax.swing.GroupLayout.DEFAULT_SIZE, 469, Short.MAX_VALUE)))))
+                        .addGroup(PnlPartieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(PnlAdversaire2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+                            .addComponent(PnlAdversaire3, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
+                            .addComponent(PnlAdversaire1, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         PnlPartieLayout.setVerticalGroup(
             PnlPartieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -989,7 +1000,7 @@ public class VuePartie extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PnlPartie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PnlPartie, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1004,7 +1015,13 @@ public class VuePartie extends javax.swing.JFrame {
     }//GEN-LAST:event_PnlCarteEnJeuMouseClicked
 
     private void btnAbandonnerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAbandonnerMouseClicked
-        // TODO add your handling code here:
+        int choix = JOptionPane.showConfirmDialog(null, "Êtes-vous sûr de vouloir abandonner la partie?");
+        
+        if (choix == 0) {
+            this.setVisible(false);
+            new MenuPrincipal().start();
+            this.dispose();
+        } 
     }//GEN-LAST:event_btnAbandonnerMouseClicked
 
     public void start() {
@@ -1112,13 +1129,30 @@ public class VuePartie extends javax.swing.JFrame {
      */
     public void updateInterface() {
         
+        
     }
     
     /*
      * Rend tous les éléments inactifs
      */
     public void lockAllPhase() {
+        PnlAdversaire1.setEnabled(false);
+        PnlAdversaire2.setEnabled(false);
+        PnlAdversaire3.setEnabled(false);
+        PnlAdversaire1.setBackground(defaut);
+        PnlAdversaire2.setBackground(defaut);
+        PnlAdversaire3.setBackground(defaut);
         
+        pnlCarte1.setEnabled(false);
+        pnlCarte2.setEnabled(false);
+        pnlCarte3.setEnabled(false);
+        pnlCarte4.setEnabled(false);
+        pnlCarte5.setEnabled(false);
+        pnlCarte1.setBackground(defaut);
+        pnlCarte2.setBackground(defaut);
+        pnlCarte3.setBackground(defaut);
+        pnlCarte4.setBackground(defaut);
+        pnlCarte5.setBackground(defaut);
     }
     
     /*
@@ -1163,6 +1197,10 @@ public class VuePartie extends javax.swing.JFrame {
     }
     
     public void endGame(String winner) {
+        
+    }
+    
+    public void showOpponentAttack(Card carte, int cible) {
         
     }
 }
