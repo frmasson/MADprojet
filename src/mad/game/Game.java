@@ -34,6 +34,7 @@ public class Game {
         this.cards.shuffle();
         this.startingHitPoints = startingHitPoints;
         this.currentPlayer = 0;
+        this.players = new ArrayList<>();
         createPlayers();
 
         playRound();
@@ -135,8 +136,8 @@ public class Game {
                 applyEffects(null, currentlyPlayedAttackCard);
                 //vue.???
             } else {
-            // la vu doit selectionner une cible
-            //vue.???
+                // la vu doit selectionner une cible
+                //vue.???
             }
         } else if (currentlyPlayedCard.getClass() == DefenceCard.class) {
             // la cible est probablement le current player
@@ -210,6 +211,7 @@ public class Game {
     }
 
     private void applyEffects(Player target, DefenceCard card) {
+        
     }
 
     private void applyEffects(Player target, ConstructionCard card) {
@@ -221,6 +223,6 @@ public class Game {
     }
 
     private int randomize(int minValue, int maxValue) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return minValue + (int) Math.ceil(Math.random() * (maxValue - minValue));
     }
 }
