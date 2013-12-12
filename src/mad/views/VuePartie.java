@@ -699,7 +699,7 @@ public class VuePartie extends javax.swing.JFrame {
                         .addComponent(pnlCarte4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(pnlCarte5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         PnlInfoPersonnelLayout.setVerticalGroup(
             PnlInfoPersonnelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -874,7 +874,7 @@ public class VuePartie extends javax.swing.JFrame {
                 .addGroup(pnlInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
                     .addComponent(lblTalon))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout PnlPartieLayout = new javax.swing.GroupLayout(PnlPartie);
@@ -887,7 +887,7 @@ public class VuePartie extends javax.swing.JFrame {
                     .addGroup(PnlPartieLayout.createSequentialGroup()
                         .addGroup(PnlPartieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(pnlStatut, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
-                            .addComponent(PnlInfoPersonnel, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE))
+                            .addComponent(PnlInfoPersonnel, javax.swing.GroupLayout.PREFERRED_SIZE, 881, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(PnlPartieLayout.createSequentialGroup()
                         .addComponent(PnlCarteEnJeu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)

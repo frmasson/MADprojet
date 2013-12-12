@@ -3,6 +3,7 @@ package mad.game;
 import java.util.ArrayList;
 import mad.cards.Card;
 import mad.cards.CardSet;
+import mad.views.VuePartie;
 
 /**
  *
@@ -10,7 +11,10 @@ import mad.cards.CardSet;
  */
 public class Game {
 
+    private VuePartie vue;
     private ArrayList<Player> players;
+    private PlayerRound playerRound;
+    private int currentPlayer;
     private CardSet cards;
     private CardSet discardedCards;
     private int startingHitPoints;
@@ -18,13 +22,20 @@ public class Game {
     private int nbPlayers = 0;
     int nbPlayerAlive = 0;
 
-    public Game(int nbPlayers, int startingHitPoints, CardSet cards) {
+    public Game(VuePartie vue, int nbPlayers, int startingHitPoints, CardSet cards) {
+        this.vue = vue;
         this.nbPlayers = nbPlayers;
         this.nbPlayerAlive = nbPlayers;
         this.cards = cards;
         this.cards.shuffle();
         this.startingHitPoints = startingHitPoints;
+        this.currentPlayer = 0;
         createPlayers();
+        /*
+         actionEvent = new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "A string that may specify a command (possibly one of several) associated with the event.");
+         */
+        playerRound = new PlayerRound(this);
+        playRound();
     }
 
     private void createPlayers() {
@@ -94,18 +105,51 @@ public class Game {
         this.nbTours++;
     }
 
-    public void playRound(){
-        while(!isEnded()){
-        for (Player player : players){
-            //playPlayerRound(player);
-        }   
-        incrementNbTours();
+    public void nextPlayerRound() {
+        if (!isEnded()) {
+            currentPlayer = (currentPlayer + 1) % nbPlayers;
+            playRound();
+        }
+    }
+
+    public void playRound() {
+        //grosso modo, déclanché playerround... qui fait??? 
         
-        }        
+        //playerRound.actionPerformed(null);
+       // playerRound = new PlayerRound(this, players.get(currentPlayer));
+        if (currentPlayer == 0){
+            unlockPlayerCards();
+        }      
+        
     }
     
-    public boolean isEnded(){
-    return (nbPlayers - nbPlayerAlive) > 1;
+    public void playPlayerCard(int pos){
+        players.get(0).playCard(pos);
+    }
+    
+    public void playPlayerDefenseCard(int pos){
+        players.get(0).playCard(pos);
+    }
+
+    public void playNPCCard(Player player){
+        
+    }
+    
+    public void playNPCDefenseCard(Player player){
+    
+    }
+       
+    
+    public boolean isEnded() {
+        return (nbPlayers - nbPlayerAlive) > 1;
+    }
+    
+   private void unlockPlayerCards(){
+       boolean playableCards[] = determinePlayableCards();
+        vue.unlockCards(playableCards);
+    }
+    
+    private boolean[] determinePlayableCards(){
+        return null;        
     }
 }
-

@@ -18,19 +18,19 @@ public abstract class Player {
     private int hitPoints;
     private ResearchCenter researchCenter;
     private ArrayList<Factory> factories;
-    private CardSet cards;
+    private ArrayList<Card> cards;
     public static final int NBMAXFACTORIES = 2;
     public static final int NBMAXCARDS = 5;
 
     public Player(){
         hitPoints = 50;
-        cards = new CardSet();
+        cards = new ArrayList<>();
         factories = new ArrayList<>();        
     }
     
     public Player(int hitPoints){
         this.hitPoints = hitPoints;
-        this.cards = new CardSet();
+        this.cards = new ArrayList<>();
         this.factories = new ArrayList<>();        
     }   
     
@@ -82,11 +82,17 @@ public abstract class Player {
         }
     }
 
-    public CardSet getCards() {
+    public ArrayList<Card> getCards() {
         return cards;
     }
 
     public void setCards(CardSet cards) {
+        for (Card card : cards){
+            this.cards.add(card);
+        }        
+    }
+    
+    public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }
 
@@ -107,5 +113,11 @@ public abstract class Player {
         //card.play();
         //@TODO ???
         discardCard(card);
+    }
+    
+    public void playCard(int pos) {
+        //slectionner la carte a la postion donnée
+        Card card = cards.get(pos);
+        playCard(card);
     }
 }
