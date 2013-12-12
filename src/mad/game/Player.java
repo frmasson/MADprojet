@@ -15,7 +15,7 @@ import mad.cards.CardSet;
 public abstract class Player {
 
     private String name;
-    private int hitPoints;
+    private int hitPoints; 
     private ResearchCenter researchCenter;
     private ArrayList<Factory> factories;
     private ArrayList<Card> cards;
@@ -74,11 +74,14 @@ public abstract class Player {
         return factories;
     }
 
-    public void ajouterFactory(Factory factory) {
+    public void addFactory(Factory factory) {
         if (factories.size() < NBMAXFACTORIES) {
             factories.add(factory);
         } else {
             //@TODO le joueur doit retirer une de ses anciennes usines
+            // solution temporaire, remplacer une factory automatiquement
+            factories.remove(0);
+            factories.add(factory);
         }
     }
 
@@ -121,4 +124,24 @@ public abstract class Player {
         Card card = cards.get(pos);
         return playCard(card);
     }
+    
+   public int getDefenceBonus(){
+       if (researchCenter != null){
+           return researchCenter.getDefenceFactor();
+       }
+       return 0;
+   }
+   
+   public int getAttackMultiplier(){
+       int attackMultiplier = 0;
+       if (factories != null){
+           for(Factory factory : factories){
+               attackMultiplier += factory.getAttackFactor();
+           }
+       }
+       if (researchCenter != null){
+           attackMultiplier += researchCenter.getAttackFactor();
+       }
+       return attackMultiplier;
+   }
 }

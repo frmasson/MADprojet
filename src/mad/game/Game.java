@@ -16,7 +16,6 @@ public class Game {
 
     private VuePartie vue;
     private ArrayList<Player> players;
-    private PlayerRound playerRound;
     private int currentPlayer;
     private CardSet cards;
     private CardSet discardedCards;
@@ -36,10 +35,7 @@ public class Game {
         this.startingHitPoints = startingHitPoints;
         this.currentPlayer = 0;
         createPlayers();
-        /*
-         actionEvent = new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "A string that may specify a command (possibly one of several) associated with the event.");
-         */
-        playerRound = new PlayerRound(this);
+
         playRound();
     }
 
@@ -136,11 +132,12 @@ public class Game {
         if (currentlyPlayedCard.getClass() == AttackCard.class) {
             AttackCard currentlyPlayedAttackCard = (AttackCard) currentlyPlayedCard;
             if (currentlyPlayedAttackCard.isAreaOfEffect()) {
-                
                 applyEffects(null, currentlyPlayedAttackCard);
-            }
+                //vue.???
+            } else {
             // la vu doit selectionner une cible
             //vue.???
+            }
         } else if (currentlyPlayedCard.getClass() == DefenceCard.class) {
             // la cible est probablement le current player
             playerPlayDefenseCard(pos);
@@ -179,23 +176,48 @@ public class Game {
     }
 
     private void applyEffects(Player target, AttackCard card) {
-        int dmg = randomize(card.getDamageMin(), card.getDamageMax());
+        int dmg = card.getDamage();
+        int attackRoll = randomize(1, 20);
+        int defenceRoll;
+
         if (target == null) {
             if (card.isAreaOfEffect()) {
-                for (Player player : players) {
-                    player.substractHitPoints(dmg);
+                for (Player aoeTarget : players) {
+                    if (card.isResistible()) {
+                        int targetDefenceBonus = aoeTarget.getDefenceBonus();
+                        defenceRoll = randomize(1 + targetDefenceBonus, 20 + targetDefenceBonus);
+                        if (attackRoll >= defenceRoll) {
+                            dmg = card.resist(dmg);
+                            aoeTarget.substractHitPoints(dmg);
+                        }
+                    } else {
+                        aoeTarget.substractHitPoints(dmg);
+                    }
                 }
             }
         } else {
-            target.substractHitPoints(dmg);
+            if (card.isResistible()) {
+                int targetDefenceBonus = target.getDefenceBonus();
+                defenceRoll = randomize(1 + targetDefenceBonus, 20 + targetDefenceBonus);
+                if (attackRoll >= defenceRoll) {
+                    dmg = card.resist(dmg);
+                    target.substractHitPoints(dmg);
+                }
+            } else {
+                target.substractHitPoints(dmg);
+            }
         }
-
     }
 
     private void applyEffects(Player target, DefenceCard card) {
     }
 
     private void applyEffects(Player target, ConstructionCard card) {
+        if (card.getType().equals("Factory")) {
+            players.get(currentPlayer).addFactory(new Factory(card));
+        } else if (card.getType().equals("ResearchCenter")) {
+            players.get(currentPlayer).setResearchCenter(new ResearchCenter(card));
+        }
     }
 
     private int randomize(int minValue, int maxValue) {

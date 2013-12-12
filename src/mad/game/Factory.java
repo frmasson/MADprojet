@@ -4,7 +4,8 @@
  */
 package mad.game;
 
-import mad.cards.Card;
+
+import mad.cards.ConstructionCard;
 
 /**
  *
@@ -14,7 +15,17 @@ public class Factory extends Construction {
 
     private int attackFactor;
 
-    public Factory(Card card) {
+    public Factory(ConstructionCard card) {
         super(card);
+        this.attackFactor = card.getAttackFactor();
     }
+
+    public int getAttackFactor() {
+        return attackFactor;
+    }
+
+    public void setAttackFactor(int attackFactor) {
+        this.attackFactor = attackFactor;
+    }
+    
 }
