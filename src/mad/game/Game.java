@@ -121,8 +121,26 @@ public class Game {
         // playerRound = new PlayerRound(this, players.get(currentPlayer));
         if (currentPlayer == 0) {
             unlockPlayerCards();
+        } else {
+            npcRound();
         }
 
+    }
+
+    private void npcRound() {
+        npcSelectAttackCard();
+        nextRound();
+
+    }
+
+    private void npcSelectAttackCard() {
+        for (Card card : players.get(currentPlayer).getCards()) {
+            if (card.getType().equals("Attack")) {
+                AttackCard attackCard = (AttackCard)card;
+                playCurrentNPCAttackCard(attackCard);
+                break;
+            }
+        }
     }
 
     public void playerPlayCard(int pos) {
@@ -138,6 +156,7 @@ public class Game {
             } else {
                 // la vu doit selectionner une cible
                 //vue.???
+                vue.unlockTargetingPhase(getAliveOpponents());
             }
         } else if (currentlyPlayedCard.getClass() == DefenceCard.class) {
             // la cible est probablement le current player
@@ -157,14 +176,32 @@ public class Game {
         players.get(0).playCard(pos);
     }
 
-    public void playNPCCard(Player player) {
+    public void playCurrentNPCAttackCard(AttackCard card) {
+        // pour le moment, on choisis une cible au hazard
+        Player target = null;
+        if (!card.isAreaOfEffect()) {            
+            target = npcSelectRandomTarget();            
+        }
+        applyEffects(target, card);
+    }
+
+    public Player npcSelectRandomTarget() {
+        int posTarget = currentPlayer;
+        while (posTarget == currentPlayer || players.get(posTarget).isKilled()) {
+            posTarget = randomize(0, nbPlayers - 1);
+        }
+        return players.get(posTarget);
     }
 
     public void playNPCDefenseCard(Player player) {
     }
 
     public boolean isEnded() {
-        return (nbPlayers - nbPlayerAlive) > 1;
+        return (nbPlayers - nbPlayerAlive) > 1 && !players.get(0).isKilled();
+    }
+
+    public boolean playerWon() {
+        return isEnded() && !players.get(0).isKilled();
     }
 
     private void unlockPlayerCards() {
@@ -180,10 +217,13 @@ public class Game {
         int dmg = card.getDamage();
         int attackRoll = randomize(1, 20);
         int defenceRoll;
+        int indexOfPlayer;
 
-        if (target == null) {
-            if (card.isAreaOfEffect()) {
-                for (Player aoeTarget : players) {
+
+        if (card.isAreaOfEffect()) {
+            for (Player aoeTarget : players) {
+                indexOfPlayer = players.indexOf(aoeTarget);
+                if (indexOfPlayer != currentPlayer && !aoeTarget.isKilled()) {
                     if (card.isResistible()) {
                         int targetDefenceBonus = aoeTarget.getDefenceBonus();
                         defenceRoll = randomize(1 + targetDefenceBonus, 20 + targetDefenceBonus);
@@ -195,6 +235,9 @@ public class Game {
                         aoeTarget.substractHitPoints(dmg);
                     }
                 }
+                vue.updateInterface();                
+                vue.showOpponentAttack(card, indexOfPlayer);
+                wait(1000);
             }
         } else {
             if (card.isResistible()) {
@@ -208,10 +251,13 @@ public class Game {
                 target.substractHitPoints(dmg);
             }
         }
+        vue.updateInterface();
+        //showOpponentAttack(Carte carte, int cible(0 à 3))
+        vue.showOpponentAttack(card, indexOfPlayer);
+        wait(1000);
     }
 
     private void applyEffects(Player target, DefenceCard card) {
-        
     }
 
     private void applyEffects(Player target, ConstructionCard card) {
@@ -220,9 +266,18 @@ public class Game {
         } else if (card.getType().equals("ResearchCenter")) {
             players.get(currentPlayer).setResearchCenter(new ResearchCenter(card));
         }
+        vue.updateInterface();
     }
 
     private int randomize(int minValue, int maxValue) {
         return minValue + (int) Math.ceil(Math.random() * (maxValue - minValue));
+    }
+
+    private boolean[] getAliveOpponents() {
+        boolean aliveOpponents[] = new boolean[nbPlayers];
+        for (int i = 0; i < players.size(); i++) {
+            aliveOpponents[i] = !players.get(i).isKilled();
+        }
+        return aliveOpponents;
     }
 }
