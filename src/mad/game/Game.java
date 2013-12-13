@@ -148,18 +148,22 @@ public class Game {
     }
 
     public void playerPlayCard(int pos) {
+        System.out.println("le joueur a cliqué sur la " + pos + "e carte");
         previousPlayedCard = currentlyPlayedCard;
         currentlyPlayedCard = players.get(0).playCard(pos);
         //les cartes ne sont plus unlockées
         //vue.???
-        if (currentlyPlayedCard.getClass() == AttackCard.class) {
+        if (currentlyPlayedCard.getType().equals("Attack")) {
+            System.out.println("la carte " + currentlyPlayedCard.getName() + " est une carte d'attaque");
             AttackCard currentlyPlayedAttackCard = (AttackCard) currentlyPlayedCard;
             if (currentlyPlayedAttackCard.isAreaOfEffect()) {
+                System.out.println("c'est un aoe donc pas de selection de target");
                 applyEffects(null, currentlyPlayedAttackCard);
                 //vue.???
             } else {
                 // la vu doit selectionner une cible
                 //vue.???
+                System.out.println("Ce n'est pas un aoe donc le joueur doit selectionner une cible");
                 vue.unlockTargetingPhase(getAliveOpponents());
             }
         } else if (currentlyPlayedCard.getClass() == DefenceCard.class) {
@@ -223,6 +227,7 @@ public class Game {
     }
 
     private void applyEffects(Player target, AttackCard card) {
+        System.out.println("on applique les effets de la carte " + card.getName() + "sur le joueur " + players.indexOf(target));
         int dmg = card.getDamage();
         int attackRoll = randomize(1, 20);
         int defenceRoll;
@@ -230,6 +235,7 @@ public class Game {
 
 
         if (card.isAreaOfEffect()) {
+             System.out.println("la carte est un aoe");
             for (Player aoeTarget : players) {
                 indexOfPlayer = players.indexOf(aoeTarget);
                 if (indexOfPlayer != currentPlayer && !aoeTarget.isKilled()) {
@@ -241,6 +247,7 @@ public class Game {
                             aoeTarget.substractHitPoints(dmg);
                         }
                     } else {
+                        System.out.println("la carte est single target");
                         aoeTarget.substractHitPoints(dmg);
                     }
                 }
@@ -291,10 +298,10 @@ public class Game {
     }
 
     private boolean[] getAliveOpponents() {
-        boolean aliveOpponents[] = new boolean[nbPlayers];
-        for (int i = 0; i < players.size(); i++) {
-            aliveOpponents[i] = !players.get(i).isKilled();
-        }
+        boolean aliveOpponents[] = new boolean[nbPlayers - 1];
+        for (int i = 0; i < players.size() - 1; i++) {
+            aliveOpponents[i] = !players.get(i+1).isKilled();
+        }        
         return aliveOpponents;
     }
 }

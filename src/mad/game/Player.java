@@ -61,7 +61,7 @@ public abstract class Player {
     }
 
     public boolean isKilled() {
-        return hitPoints > 0;
+        return hitPoints <= 0;
     }
 
     public ResearchCenter getResearchCenter() {
