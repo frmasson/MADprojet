@@ -1532,7 +1532,7 @@ public class VuePartie extends javax.swing.JFrame {
      */
     public void unlockAttackPhase(boolean attackCards[]) {
         phaseJeu = Phase.ATTAQUE;
-        AnnouncePlayerAction("\nC'est vôtre tour");
+        AnnouncePlayerAction("\nC'est à vous.");
         selection = 0;
         //btnAction2.setEnabled(true);
         PnlInfoPersonnel.setBackground(actif);
