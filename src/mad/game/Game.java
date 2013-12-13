@@ -215,6 +215,7 @@ public class Game {
         int posTarget = currentPlayer;
         while (posTarget == currentPlayer || players.get(posTarget).isKilled()) {
             posTarget = randomize(0, nbPlayers - 1);
+            System.out.println("posTarget = " + posTarget);
         }
         System.out.println("le npc a selectionné la target " + posTarget);
         return players.get(posTarget);
