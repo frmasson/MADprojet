@@ -341,7 +341,7 @@ public class Game {
     private void giveFullCards() {
         Player player = players.get(currentPlayer);
         System.out.println("le nombre de carte du joueur " + currentPlayer + " est " + player.getCards().size());
-        while (player.getCards().size() < Player.NBMAXCARDS - 1){
+        while (player.getCards().size() < Player.NBMAXCARDS){
             System.out.println("on ajoute une carte");
             player.addCard(cards.pop());
         }
