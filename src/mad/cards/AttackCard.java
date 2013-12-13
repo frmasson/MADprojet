@@ -144,7 +144,7 @@ public class AttackCard extends Card {
 	 */
 	public int getDamage() {
 		return damageMin
-				+ (int) Math.ceil(Math.random() * (damageMax - damageMin));
+				+ (int) Math.round(Math.random() * (damageMax - damageMin));
 	}
 
 	/**

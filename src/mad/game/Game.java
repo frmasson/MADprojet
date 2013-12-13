@@ -333,8 +333,7 @@ public class Game {
 
 
     private int randomize(int min, int max) {
-        //Min + (int)(Math.random() * ((Max - Min) + 1))
-        return min + (int)(Math.random() * ((max - min) + 1));
+        return min + (int)(Math.round(Math.random() * (max - min)));
     }
 
     private boolean[] getAliveOpponents() {
