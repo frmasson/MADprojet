@@ -242,9 +242,11 @@ public class Game {
                     if (card.isResistible()) {
                         int targetDefenceBonus = aoeTarget.getDefenceBonus();
                         defenceRoll = randomize(1 + targetDefenceBonus, 20 + targetDefenceBonus);
-                        if (attackRoll >= defenceRoll) {
-                            dmg = card.resist(dmg);
+                        if (attackRoll >= defenceRoll) {                           
                             aoeTarget.substractHitPoints(dmg);
+                        } else {
+                             dmg = card.resist(dmg);
+                             aoeTarget.substractHitPoints(dmg);
                         }
                     } else {                        
                         aoeTarget.substractHitPoints(dmg);
@@ -263,9 +265,11 @@ public class Game {
             if (card.isResistible()) {
                 int targetDefenceBonus = target.getDefenceBonus();
                 defenceRoll = randomize(1 + targetDefenceBonus, 20 + targetDefenceBonus);
-                if (attackRoll >= defenceRoll) {
-                    dmg = card.resist(dmg);
+                if (attackRoll >= defenceRoll) {                    
                     target.substractHitPoints(dmg);
+                } else {
+                     dmg = card.resist(dmg);
+                     target.substractHitPoints(dmg);
                 }
             } else {
                 target.substractHitPoints(dmg);
