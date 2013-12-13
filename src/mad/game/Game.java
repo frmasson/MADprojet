@@ -216,7 +216,8 @@ public class Game {
         System.out.println("le npc select une target");
         int posTarget = currentPlayer;
         while (posTarget == currentPlayer || players.get(posTarget).isKilled()) {
-            posTarget = randomize(0, nbPlayers - 1);
+            posTarget = (randomize(1, nbPlayers )) - 1;
+            System.out.println("posTarget = " + posTarget);
         }
         System.out.println("le npc a selectionné la target " + posTarget);
         return players.get(posTarget);
@@ -323,8 +324,10 @@ public class Game {
         vue.updateInterfaceJeu();
     }
 
-    private int randomize(int minValue, int maxValue) {
-        return (minValue + (int)(Math.random() * ((maxValue - minValue) + 1)));
+
+    private int randomize(int min, int max) {
+        //Min + (int)(Math.random() * ((Max - Min) + 1))
+        return min + (int)(Math.random() * ((max - min) + 1));
     }
 
     private boolean[] getAliveOpponents() {
@@ -338,7 +341,7 @@ public class Game {
     private void giveFullCards() {
         Player player = players.get(currentPlayer);
         System.out.println("le nombre de carte du joueur " + currentPlayer + " est " + player.getCards().size());
-        while (player.getCards().size() < Player.NBMAXCARDS - 1){
+        while (player.getCards().size() < Player.NBMAXCARDS){
             System.out.println("on ajoute une carte");
             player.addCard(cards.pop());
         }
