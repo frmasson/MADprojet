@@ -26,14 +26,13 @@ public class Game {
     private int startingHitPoints;
     private int nbTours = 0;
     private int nbPlayers = 0;
-    private int nbPlayerAlive = 0;
+    //private int nbPlayerAlive = 0;
     private boolean firstRound = true;
-    
 
     public Game(VuePartie vue, int nbPlayers, int startingHitPoints, CardSet cards) {
         this.vue = vue;
         this.nbPlayers = nbPlayers;
-        this.nbPlayerAlive = nbPlayers;
+        //this.nbPlayerAlive = nbPlayers;
         this.cards = cards;
         this.cards.shuffle();
         this.startingHitPoints = startingHitPoints;
@@ -72,7 +71,7 @@ public class Game {
     }
 
     public void killPlayer(Player player) {
-        this.nbPlayerAlive--;
+        //this.nbPlayerAlive--;
         //@TODO
     }
 
@@ -117,7 +116,7 @@ public class Game {
         if (!isEnded()) {
             currentPlayer = (currentPlayer + 1) % nbPlayers;
             if (!players.get(currentPlayer).isKilled()) {
-                System.out.println("le joueur " + currentPlayer + " est en vie avec " + players.get(currentPlayer).getHitPoints()+ " points de vie, on joue son tour");
+                System.out.println("le joueur " + currentPlayer + " est en vie avec " + players.get(currentPlayer).getHitPoints() + " points de vie, on joue son tour");
                 playRound();
             } else {
                 System.out.println("le joueur " + currentPlayer + "est mort, on passe son tour");
@@ -132,7 +131,7 @@ public class Game {
     public void playRound() {
         System.out.println("on lance playRound est le currentPlayer est = " + currentPlayer);
         giveFullCards();
-        if (!firstRound){
+        if (!firstRound) {
             vue.updateInterface();
         } else {
             firstRound = false;
@@ -225,7 +224,17 @@ public class Game {
     }
 
     public boolean isEnded() {
-        return nbPlayerAlive <= 1 || players.get(0).isKilled();
+        return getNbPlayersAlive() <= 1 || players.get(0).isKilled();
+    }
+
+    private int getNbPlayersAlive() {
+        int nbPlayerAlive = 0;
+        for (Player player : players) {
+            if (!player.isKilled()) {
+                nbPlayerAlive++;
+            }
+        }
+        return nbPlayerAlive;
     }
 
     public boolean playerWon() {
@@ -240,8 +249,11 @@ public class Game {
     private boolean[] determinePlayableCards() {
         Player player = players.get(0);
         ArrayList<Card> cards = player.getCards();
-        boolean playableCards[] = new boolean[cards.size()];
-        
+        boolean playableCards[] = new boolean[Player.NBMAXCARDS];
+        for (int i = 0; i < playableCards.length; i++){
+            playableCards[i] = false;
+        }
+
         for (int i = 0; i < cards.size(); i++) {
             playableCards[i] = cards.get(i).getType().equals("Attack");
         }
@@ -341,7 +353,7 @@ public class Game {
     private void giveFullCards() {
         Player player = players.get(currentPlayer);
         System.out.println("le nombre de carte du joueur " + currentPlayer + " est " + player.getCards().size());
-        while (player.getCards().size() < Player.NBMAXCARDS - 1){
+        while (player.getCards().size() < Player.NBMAXCARDS - 1) {
             System.out.println("on ajoute une carte");
             player.addCard(cards.pop());
         }
