@@ -111,9 +111,17 @@ public class Game {
     }
 
     public void nextRound() {
+        System.out.println("isEnded = " + isEnded());
         if (!isEnded()) {
             currentPlayer = (currentPlayer + 1) % nbPlayers;
-            playRound();
+            if (!players.get(currentPlayer).isKilled()){
+                System.out.println("le joueur " + currentPlayer + " est en vie, on joue son tour");
+                playRound();
+            } else {
+                System.out.println("le joueur " + currentPlayer + "est mort, on passe son tour");
+                nextRound();
+            }
+            
         }
     }
 
@@ -126,18 +134,20 @@ public class Game {
         if (currentPlayer == 0) {
             unlockPlayerCards();
         } else {
+            System.out.println("c'est un npc");
             npcRound();
         }
 
     }
 
     private void npcRound() {
-        npcSelectAttackCard();
-        nextRound();
+        System.out.println("on gere le round du npc");
+        npcSelectAttackCard();       
 
     }
 
     private void npcSelectAttackCard() {
+        System.out.println("on selectionne une carte d'attaque");
         for (Card card : players.get(currentPlayer).getCards()) {
             if (card.getType().equals("Attack")) {
                 AttackCard attackCard = (AttackCard)card;
@@ -185,19 +195,23 @@ public class Game {
     }
 
     public void playCurrentNPCAttackCard(AttackCard card) {
+        System.out.println("le npc va jouer " + card.getName());
         // pour le moment, on choisis une cible au hazard
         Player target = null;
-        if (!card.isAreaOfEffect()) {            
+        if (!card.isAreaOfEffect()) {
             target = npcSelectRandomTarget();            
         }
+        System.out.println("le npc va appliquer les effets de la cartes a la ou les cibles");
         applyEffects(target, card);
     }
 
     public Player npcSelectRandomTarget() {
+        System.out.println("le npc select une target");
         int posTarget = currentPlayer;
         while (posTarget == currentPlayer || players.get(posTarget).isKilled()) {
             posTarget = randomize(0, nbPlayers - 1);
         }
+        System.out.println("le npc a selectionné la target " + posTarget);
         return players.get(posTarget);
     }
 
@@ -255,7 +269,7 @@ public class Game {
                 vue.updateInterface();                
                 vue.showOpponentAttack(card, indexOfPlayer);
                 try {
-                    wait(1000);
+                    Thread.currentThread().sleep(3000);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -282,12 +296,13 @@ public class Game {
        // vue.showOpponentAttack(card, );
         System.out.println("avant le wait");
         try {
-            wait(1000);
+            Thread.currentThread().sleep(3000);
         } catch (InterruptedException ex) {
             System.out.println("l'exeption du wait");
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("apres le wait");
+        nextRound();
     }
 
     private void applyEffects(Player target, DefenceCard card) {
