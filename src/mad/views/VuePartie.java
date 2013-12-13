@@ -1441,6 +1441,7 @@ public class VuePartie extends javax.swing.JFrame {
         PnlAdversaire1.setBackground(defaut);
         PnlAdversaire2.setBackground(defaut);
         PnlAdversaire3.setBackground(defaut);
+        PnlInfoPersonnel.setBackground(defaut);
         
         pnlCarte1.setEnabled(false);
         pnlCarte2.setEnabled(false);
@@ -1577,6 +1578,8 @@ public class VuePartie extends javax.swing.JFrame {
             PnlAdversaire2.setBackground(attaque);
         else if (cible == 3)
             PnlAdversaire3.setBackground(attaque);
+        else if (cible == 0)
+            PnlInfoPersonnel.setBackground(attaque);
     }
    
 }
