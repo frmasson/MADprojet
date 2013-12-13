@@ -1510,9 +1510,9 @@ public class VuePartie extends javax.swing.JFrame {
         btnAction1.setEnabled(false);
         btnAction2.setEnabled(false);
         
-        lblUsineUn1.setEnabled(false);
+        //lblUsineUn1.setEnabled(false);
         lblUsineUn1.setForeground(Color.BLACK);
-        lblUsineDeux1.setEnabled(false);
+        //lblUsineDeux1.setEnabled(false);
         lblUsineDeux1.setForeground(Color.BLACK);
         
         lblDommage1.setText("");
