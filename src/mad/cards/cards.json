@@ -2,23 +2,23 @@
     "attack1": {
         "type": "Attack",
         "name": "Missile",
-        "description": "Le missile de base. Ça fait la job, mais sans plus.",
+        "description": "Le missile de base.\ndam: 1-10",
         "image": "default.png",
         "damage_min": 1,
         "damage_max": 10,
-        "resistance": 0,
+        "resistance": 1,
         "reflect": true,
         "cancelable": 1,
         "area_of_effect": false
     },
     "attack2": {
         "type": "Attack",
-        "name": "Attaque chiurgicale",
-        "description": "",
+        "name": "Attaque chirurgicale",
+        "description": "Une attaque cruel et précise\ndam: 8-8\nRésistance, demi-dommage",
         "image": "default.png",
-        "damage_min": 5,
-        "damage_max": 5,
-        "resistance": 1,
+        "damage_min": 8,
+        "damage_max": 8,
+        "resistance": 0.5,
         "reflect": true,
         "cancelable": 2,
         "area_of_effect": false
@@ -26,11 +26,11 @@
     "attack3": {
         "type": "Attack",
         "name": "Missile furtif",
-        "description": "",
+        "description": "Missile furtif\ndam: 1-10\nInbloquable",
         "image": "default.png",
-        "damage_min": 0,
+        "damage_min": 1,
         "damage_max": 10,
-        "resistance": 2,
+        "resistance": 0,
         "reflect": false,
         "cancelable": 0,
         "area_of_effect": false
@@ -38,11 +38,11 @@
     "attack4": {
         "type": "Attack",
         "name": "Pluie de missiles",
-        "description": "",
+        "description": "Des missiles pour tout le monde\ndam: 1-10",
         "image": "default.png",
         "damage_min": 1,
         "damage_max": 10,
-        "resistance": 0,
+        "resistance": 1,
         "reflect": true,
         "cancelable": 1,
         "area_of_effect": true
@@ -50,11 +50,11 @@
     "attack5": {
         "type": "Attack",
         "name": "Gros missile",
-        "description": "",
+        "description": "Un missile qui pense grand\ndam: 5-20\nRésistance, demi-dommage",
         "image": "default.png",
         "damage_min": 5,
         "damage_max": 20,
-        "resistance": 1,
+        "resistance": 0.5,
         "reflect": true,
         "cancelable": 1,
         "area_of_effect": false
@@ -62,11 +62,11 @@
     "attack6": {
         "type": "Attack",
         "name": "Tsar Bomba",
-        "description": "",
+        "description": "Une bombe pour les amateurs de cratère fumant\ndam: 20-50",
         "image": "default.png",
-        "damage_min": 50,
+        "damage_min": 20,
         "damage_max": 50,
-        "resistance": 2,
+        "resistance": 1,
         "reflect": true,
         "cancelable": 2,
         "area_of_effect": false

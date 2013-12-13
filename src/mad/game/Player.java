@@ -55,8 +55,11 @@ public abstract class Player {
     }
 
     public void substractHitPoints(int hitPoints) {
-        if (hitPoints > 0) {
-            this.hitPoints -= hitPoints;
+        if (this.hitPoints > 0) {
+            this.hitPoints -= hitPoints;         
+        }
+        if (this.hitPoints < 0) {
+            this.hitPoints = 0;
         }
     }
 

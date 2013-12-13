@@ -1,8 +1,6 @@
 package mad.game;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import mad.cards.AttackCard;
 import mad.cards.Card;
 import mad.cards.CardSet;
@@ -125,13 +123,12 @@ public class Game {
             }
 
         } else {
-            vue.endGame(Integer.toString(currentPlayer));
+            vue.endGame(currentPlayer);
         }
     }
 
     public void playRound() {
         System.out.println("on lance playRound est le currentPlayer est = " + currentPlayer);
-        giveFullCards();
         if (!firstRound){
             vue.updateInterfaceJeu();
         } else {
@@ -278,10 +275,13 @@ public class Game {
                     } else {
                         aoeTarget.substractHitPoints(dmg);
                     }
-                }                            
+                    if (aoeTarget.isKilled()) {
+                        killPlayer(aoeTarget);
+                    }
+                    vue.showDamage(dmg, indexOfPlayer);
+                }               
             }
-            
-            vue.updateInterfaceJeu();
+                     
             vue.showOpponentAttack(card, -1, currentPlayer);
         } else {
             System.out.println("la carte est single target");
@@ -297,11 +297,14 @@ public class Game {
             } else {
                 target.substractHitPoints(dmg);
             }
-            vue.updateInterfaceJeu();
+            if (target.isKilled()) {
+                        killPlayer(target);
+            }
+            vue.showDamage(dmg, players.indexOf(target));
             vue.showOpponentAttack(card, players.indexOf(target), currentPlayer);
         }
         System.out.println("avant le wait");
-        try {
+        /*try {
             Thread.currentThread().sleep(3000);
         } catch (InterruptedException ex) {
             System.out.println("l'exeption du wait");
@@ -310,6 +313,10 @@ public class Game {
         System.out.println("apres le wait");
         vue.lockAllPhase();
         nextRound();
+        * */
+        giveFullCards();
+        vue.updateInterfaceJeu();
+        vue.unlockContinuePhase();
     }
 
     private void applyEffects(Player target, DefenceCard card) {
