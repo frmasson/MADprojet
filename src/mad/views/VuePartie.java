@@ -1569,7 +1569,8 @@ public class VuePartie extends javax.swing.JFrame {
      * description du tour du joueur
      */
     public void AnnouncePlayerAction(String announce) {
-        
+        txtEvenement.append(announce);
+        txtEvenement.setCaretPosition(txtEvenement.getDocument().getLength());
     }
     
     public void endGame(String winner) {
@@ -1593,8 +1594,24 @@ public class VuePartie extends javax.swing.JFrame {
         else if (cible == 0)
             PnlInfoPersonnel.setBackground(attaque);
         else if (cible == -1) {
-            
+            if (lanceur != 0) {
+                PnlInfoPersonnel.setBackground(attaque);
+            }
+            if (lanceur != 1) {
+                PnlAdversaire1.setBackground(attaque);
+            }
+            if (lanceur != 2) {
+                PnlAdversaire2.setBackground(attaque);
+            }
+            if (lanceur != 3) {
+                PnlAdversaire3.setBackground(attaque);
+            }
         }
+        
+        if (cible == -1)
+            AnnouncePlayerAction("\nLe joueur " + (lanceur + 1) + " a joué " + carte.getName() + "sur tous les opposants");
+        else
+            AnnouncePlayerAction("\nLe joueur " + (lanceur + 1) + " a joué " + carte.getName() + "sur le joueur " + (cible + 1));
         
         this.setVisible(true);
     }
