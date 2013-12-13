@@ -18,7 +18,6 @@ public class MADproto {
      */
     public static void main(String[] args) {
         MenuPrincipal vue = new MenuPrincipal();
-        //VuePartie vue = new VuePartie();
         vue.start();
     }
 }
