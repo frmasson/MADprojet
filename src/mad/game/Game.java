@@ -26,7 +26,9 @@ public class Game {
     private int startingHitPoints;
     private int nbTours = 0;
     private int nbPlayers = 0;
-    int nbPlayerAlive = 0;
+    private int nbPlayerAlive = 0;
+    private boolean firstRound = true;
+    
 
     public Game(VuePartie vue, int nbPlayers, int startingHitPoints, CardSet cards) {
         this.vue = vue;
@@ -115,20 +117,26 @@ public class Game {
         if (!isEnded()) {
             currentPlayer = (currentPlayer + 1) % nbPlayers;
             if (!players.get(currentPlayer).isKilled()) {
-                System.out.println("le joueur " + currentPlayer + " est en vie, on joue son tour");
+                System.out.println("le joueur " + currentPlayer + " est en vie avec " + players.get(currentPlayer).getHitPoints()+ " points de vie, on joue son tour");
                 playRound();
             } else {
                 System.out.println("le joueur " + currentPlayer + "est mort, on passe son tour");
                 nextRound();
             }
 
+        } else {
+            vue.endGame("j'sais pas qui");
         }
     }
 
     public void playRound() {
         System.out.println("on lance playRound est le currentPlayer est = " + currentPlayer);
         giveFullCards();
-       vue.updateInterface();
+        if (!firstRound){
+            vue.updateInterface();
+        } else {
+            firstRound = false;
+        }
         if (currentPlayer == 0) {
             unlockPlayerCards();
         } else {
@@ -230,9 +238,11 @@ public class Game {
     }
 
     private boolean[] determinePlayableCards() {
-        boolean playableCards[] = new boolean[Player.NBMAXCARDS];
-        ArrayList<Card> cards = players.get(0).getCards();
-        for (int i = 0; i < Player.NBMAXCARDS; i++) {
+        Player player = players.get(0);
+        ArrayList<Card> cards = player.getCards();
+        boolean playableCards[] = new boolean[cards.size()];
+        
+        for (int i = 0; i < cards.size(); i++) {
             playableCards[i] = cards.get(i).getType().equals("Attack");
         }
         return playableCards;
@@ -300,6 +310,7 @@ public class Game {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("apres le wait");
+        vue.lockAllPhase();
         nextRound();
     }
 
