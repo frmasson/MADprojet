@@ -1122,22 +1122,22 @@ public class VuePartie extends javax.swing.JFrame {
 
     private void PnlAdversaire1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlAdversaire1MouseClicked
         if (PnlAdversaire1.isEnabled()) {
-            partie.playerSelectTarget(1);
             lockAllPhase();
+            partie.playerSelectTarget(1);
         }
     }//GEN-LAST:event_PnlAdversaire1MouseClicked
 
     private void PnlAdversaire2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlAdversaire2MouseClicked
         if (PnlAdversaire2.isEnabled()) {
-            partie.playerSelectTarget(2);
             lockAllPhase();
+            partie.playerSelectTarget(2);
         }
     }//GEN-LAST:event_PnlAdversaire2MouseClicked
 
     private void PnlAdversaire3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlAdversaire3MouseClicked
         if (PnlAdversaire3.isEnabled()) {
-            partie.playerSelectTarget(3);
             lockAllPhase();
+            partie.playerSelectTarget(3);
         }
     }//GEN-LAST:event_PnlAdversaire3MouseClicked
 
