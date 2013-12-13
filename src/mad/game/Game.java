@@ -125,7 +125,7 @@ public class Game {
             }
 
         } else {
-            vue.endGame("j'sais pas qui");
+            vue.endGame(Integer.toString(currentPlayer));
         }
     }
 
@@ -133,7 +133,7 @@ public class Game {
         System.out.println("on lance playRound est le currentPlayer est = " + currentPlayer);
         giveFullCards();
         if (!firstRound){
-            vue.updateInterface();
+            vue.updateInterfaceJeu();
         } else {
             firstRound = false;
         }
@@ -192,6 +192,7 @@ public class Game {
 
     public void playerSelectTarget(int pos) {
         Player target = players.get(pos);
+        vue.lockAllPhase();
         applyEffects(target, (AttackCard) currentlyPlayedCard);
     }
 
@@ -240,7 +241,10 @@ public class Game {
     private boolean[] determinePlayableCards() {
         Player player = players.get(0);
         ArrayList<Card> cards = player.getCards();
-        boolean playableCards[] = new boolean[cards.size()];
+        boolean playableCards[] = new boolean[5];
+        for (boolean bool: playableCards) {
+            bool = false;
+        }
         
         for (int i = 0; i < cards.size(); i++) {
             playableCards[i] = cards.get(i).getType().equals("Attack");
@@ -273,15 +277,11 @@ public class Game {
                     } else {
                         aoeTarget.substractHitPoints(dmg);
                     }
-                }
-                vue.updateInterface();
-                vue.showOpponentAttack(card, indexOfPlayer);
-                try {
-                    Thread.currentThread().sleep(3000);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                }                            
             }
+            
+            vue.updateInterfaceJeu();
+            vue.showOpponentAttack(card, -1, currentPlayer);
         } else {
             System.out.println("la carte est single target");
             if (card.isResistible()) {
@@ -296,12 +296,9 @@ public class Game {
             } else {
                 target.substractHitPoints(dmg);
             }
+            vue.updateInterfaceJeu();
+            vue.showOpponentAttack(card, players.indexOf(target), currentPlayer);
         }
-        System.out.println("avant le update");
-        vue.updateInterface();
-        System.out.println("apres le update");
-        //showOpponentAttack(Carte carte, int cible(0 à 3))
-        // vue.showOpponentAttack(card, );
         System.out.println("avant le wait");
         try {
             Thread.currentThread().sleep(3000);
@@ -323,11 +320,11 @@ public class Game {
         } else if (card.getType().equals("ResearchCenter")) {
             players.get(currentPlayer).setResearchCenter(new ResearchCenter(card));
         }
-        vue.updateInterface();
+        vue.updateInterfaceJeu();
     }
 
     private int randomize(int minValue, int maxValue) {
-        return minValue + (int) Math.ceil(Math.random() * (maxValue - minValue));
+        return (minValue + (int)(Math.random() * ((maxValue - minValue) + 1)));
     }
 
     private boolean[] getAliveOpponents() {
