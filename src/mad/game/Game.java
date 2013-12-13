@@ -114,23 +114,20 @@ public class Game {
         System.out.println("isEnded = " + isEnded());
         if (!isEnded()) {
             currentPlayer = (currentPlayer + 1) % nbPlayers;
-            if (!players.get(currentPlayer).isKilled()){
+            if (!players.get(currentPlayer).isKilled()) {
                 System.out.println("le joueur " + currentPlayer + " est en vie, on joue son tour");
                 playRound();
             } else {
                 System.out.println("le joueur " + currentPlayer + "est mort, on passe son tour");
                 nextRound();
             }
-            
+
         }
     }
 
     public void playRound() {
         System.out.println("on lance playRound est le currentPlayer est = " + currentPlayer);
-        //grosso modo, déclanché playerround... qui fait??? 
-
-        //playerRound.actionPerformed(null);
-        // playerRound = new PlayerRound(this, players.get(currentPlayer));
+        giveFullCards();
         if (currentPlayer == 0) {
             unlockPlayerCards();
         } else {
@@ -142,7 +139,7 @@ public class Game {
 
     private void npcRound() {
         System.out.println("on gere le round du npc");
-        npcSelectAttackCard();       
+        npcSelectAttackCard();
 
     }
 
@@ -150,7 +147,7 @@ public class Game {
         System.out.println("on selectionne une carte d'attaque");
         for (Card card : players.get(currentPlayer).getCards()) {
             if (card.getType().equals("Attack")) {
-                AttackCard attackCard = (AttackCard)card;
+                AttackCard attackCard = (AttackCard) card;
                 playCurrentNPCAttackCard(attackCard);
                 break;
             }
@@ -199,7 +196,7 @@ public class Game {
         // pour le moment, on choisis une cible au hazard
         Player target = null;
         if (!card.isAreaOfEffect()) {
-            target = npcSelectRandomTarget();            
+            target = npcSelectRandomTarget();
         }
         System.out.println("le npc va appliquer les effets de la cartes a la ou les cibles");
         applyEffects(target, card);
@@ -233,8 +230,8 @@ public class Game {
 
     private boolean[] determinePlayableCards() {
         boolean playableCards[] = new boolean[Player.NBMAXCARDS];
-        ArrayList <Card> cards = players.get(0).getCards();
-        for (int i = 0; i < Player.NBMAXCARDS; i++){
+        ArrayList<Card> cards = players.get(0).getCards();
+        for (int i = 0; i < Player.NBMAXCARDS; i++) {
             playableCards[i] = cards.get(i).getType().equals("Attack");
         }
         return playableCards;
@@ -249,24 +246,24 @@ public class Game {
 
 
         if (card.isAreaOfEffect()) {
-             System.out.println("la carte est un aoe");
+            System.out.println("la carte est un aoe");
             for (Player aoeTarget : players) {
                 indexOfPlayer = players.indexOf(aoeTarget);
                 if (indexOfPlayer != currentPlayer && !aoeTarget.isKilled()) {
                     if (card.isResistible()) {
                         int targetDefenceBonus = aoeTarget.getDefenceBonus();
                         defenceRoll = randomize(1 + targetDefenceBonus, 20 + targetDefenceBonus);
-                        if (attackRoll >= defenceRoll) {                           
+                        if (attackRoll >= defenceRoll) {
                             aoeTarget.substractHitPoints(dmg);
                         } else {
-                             dmg = card.resist(dmg);
-                             aoeTarget.substractHitPoints(dmg);
+                            dmg = card.resist(dmg);
+                            aoeTarget.substractHitPoints(dmg);
                         }
-                    } else {                        
+                    } else {
                         aoeTarget.substractHitPoints(dmg);
                     }
                 }
-                vue.updateInterface();                
+                vue.updateInterface();
                 vue.showOpponentAttack(card, indexOfPlayer);
                 try {
                     Thread.currentThread().sleep(3000);
@@ -279,11 +276,11 @@ public class Game {
             if (card.isResistible()) {
                 int targetDefenceBonus = target.getDefenceBonus();
                 defenceRoll = randomize(1 + targetDefenceBonus, 20 + targetDefenceBonus);
-                if (attackRoll >= defenceRoll) {                    
+                if (attackRoll >= defenceRoll) {
                     target.substractHitPoints(dmg);
                 } else {
-                     dmg = card.resist(dmg);
-                     target.substractHitPoints(dmg);
+                    dmg = card.resist(dmg);
+                    target.substractHitPoints(dmg);
                 }
             } else {
                 target.substractHitPoints(dmg);
@@ -293,7 +290,7 @@ public class Game {
         vue.updateInterface();
         System.out.println("apres le update");
         //showOpponentAttack(Carte carte, int cible(0 à 3))
-       // vue.showOpponentAttack(card, );
+        // vue.showOpponentAttack(card, );
         System.out.println("avant le wait");
         try {
             Thread.currentThread().sleep(3000);
@@ -324,8 +321,15 @@ public class Game {
     private boolean[] getAliveOpponents() {
         boolean aliveOpponents[] = new boolean[nbPlayers - 1];
         for (int i = 0; i < players.size() - 1; i++) {
-            aliveOpponents[i] = !players.get(i+1).isKilled();
-        }        
+            aliveOpponents[i] = !players.get(i + 1).isKilled();
+        }
         return aliveOpponents;
+    }
+
+    private void giveFullCards() {
+        Player player = players.get(currentPlayer);
+        while (player.getCards().size() < Player.NBMAXCARDS - 1){
+            player.addCard(cards.pop());
+        }
     }
 }
