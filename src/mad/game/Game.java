@@ -1,6 +1,8 @@
 package mad.game;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mad.cards.AttackCard;
 import mad.cards.Card;
 import mad.cards.CardSet;
@@ -44,7 +46,7 @@ public class Game {
         Player newPlayer = new HumanPlayer(startingHitPoints);
         createStartingPlayerCardSet(newPlayer);
         addPlayer(newPlayer);
-        for (int i = 0; i <= this.nbPlayers; i++) {
+        for (int i = 0; i < this.nbPlayers - 1; i++) {
             newPlayer = new AIPlayer(startingHitPoints);
             createStartingPlayerCardSet(newPlayer);
             addPlayer(newPlayer);
@@ -237,7 +239,11 @@ public class Game {
                 }
                 vue.updateInterface();                
                 vue.showOpponentAttack(card, indexOfPlayer);
-                wait(1000);
+                try {
+                    wait(1000);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         } else {
             if (card.isResistible()) {
@@ -253,8 +259,12 @@ public class Game {
         }
         vue.updateInterface();
         //showOpponentAttack(Carte carte, int cible(0 à 3))
-        vue.showOpponentAttack(card, indexOfPlayer);
-        wait(1000);
+       // vue.showOpponentAttack(card, );
+        try {
+            wait(1000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private void applyEffects(Player target, DefenceCard card) {
