@@ -1535,7 +1535,7 @@ public class VuePartie extends javax.swing.JFrame {
     public void unlockAttackPhase(boolean attackCards[]) {
         phaseJeu = Phase.ATTAQUE;
         selection = 0;
-        btnAction2.setEnabled(true);
+        //btnAction2.setEnabled(true);
         
         if (attackCards[0]) {
             pnlCarte1.setEnabled(true);
