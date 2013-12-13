@@ -1567,7 +1567,16 @@ public class VuePartie extends javax.swing.JFrame {
     }
     
     public void showOpponentAttack(Card carte, int cible) {
+        lblCarteEnJeu.setText(carte.getName());
+        lblImgCarteJeu.setIcon(carte.getImage());
+        txtDescriptionCarteJeu.setText(carte.getDescription());
         
+        if (cible == 1)
+            PnlAdversaire1.setBackground(attaque);
+        else if (cible == 2)
+            PnlAdversaire2.setBackground(attaque);
+        else if (cible == 3)
+            PnlAdversaire3.setBackground(attaque);
     }
    
 }
