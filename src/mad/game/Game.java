@@ -118,6 +118,7 @@ public class Game {
     }
 
     public void playRound() {
+        System.out.println("on lance playRound est le currentPlayer est = " + currentPlayer);
         //grosso modo, déclanché playerround... qui fait??? 
 
         //playerRound.actionPerformed(null);
@@ -209,11 +210,16 @@ public class Game {
 
     private void unlockPlayerCards() {
         boolean playableCards[] = determinePlayableCards();
-        //vue.unlockCards(playableCards);
+        vue.unlockAttackPhase(playableCards);
     }
 
     private boolean[] determinePlayableCards() {
-        return null;
+        boolean playableCards[] = new boolean[Player.NBMAXCARDS];
+        ArrayList <Card> cards = players.get(0).getCards();
+        for (int i = 0; i < Player.NBMAXCARDS; i++){
+            playableCards[i] = cards.get(i).getType().equals("Attack");
+        }
+        return playableCards;
     }
 
     private void applyEffects(Player target, AttackCard card) {
