@@ -35,6 +35,7 @@ public class Game {
         this.startingHitPoints = startingHitPoints;
         this.currentPlayer = 0;
         this.players = new ArrayList<>();
+        this.discardedCards = new CardSet();
         createPlayers();
 
         playRound();
@@ -237,7 +238,7 @@ public class Game {
                 }
                 vue.updateInterface();                
                 vue.showOpponentAttack(card, indexOfPlayer);
-                wait(1000);
+                //wait(1000);
             }
         } else {
             if (card.isResistible()) {
@@ -253,8 +254,8 @@ public class Game {
         }
         vue.updateInterface();
         //showOpponentAttack(Carte carte, int cible(0 à 3))
-        vue.showOpponentAttack(card, indexOfPlayer);
-        wait(1000);
+        //vue.showOpponentAttack(card, indexOfPlayer);
+        //wait(1000);
     }
 
     private void applyEffects(Player target, DefenceCard card) {

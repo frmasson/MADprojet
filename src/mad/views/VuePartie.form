@@ -24,12 +24,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PnlPartie" min="-2" pref="898" max="-2" attributes="0"/>
+          <Component id="PnlPartie" alignment="0" pref="922" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="PnlPartie" min="-2" max="-2" attributes="0"/>
+          <Component id="PnlPartie" alignment="0" pref="803" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -50,17 +50,17 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="pnlStatut" pref="878" max="32767" attributes="0"/>
-                      <Component id="PnlInfoPersonnel" pref="878" max="32767" attributes="0"/>
+                      <Component id="pnlStatut" pref="902" max="32767" attributes="0"/>
+                      <Component id="PnlInfoPersonnel" pref="902" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="PnlCarteEnJeu" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="pnlInformation" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="PnlAdversaire2" alignment="0" pref="461" max="32767" attributes="0"/>
-                              <Component id="PnlAdversaire3" pref="461" max="32767" attributes="0"/>
-                              <Component id="PnlAdversaire1" pref="461" max="32767" attributes="0"/>
+                              <Component id="PnlAdversaire2" alignment="0" pref="485" max="32767" attributes="0"/>
+                              <Component id="PnlAdversaire3" pref="485" max="32767" attributes="0"/>
+                              <Component id="PnlAdversaire1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -87,7 +87,7 @@
                   <Component id="pnlStatut" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="PnlInfoPersonnel" min="-2" pref="339" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -122,9 +122,9 @@
                                   <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblCarteEnMain2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblPtsVie2" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="lblCarteEnMain2" pref="20" max="32767" attributes="0"/>
+                                  <Component id="lblPtsVie2" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -143,8 +143,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblUsineUn2" max="32767" attributes="0"/>
-                          <Component id="lblRecherche2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblUsineUn2" pref="68" max="-2" attributes="0"/>
+                          <Component id="lblRecherche2" alignment="0" pref="68" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="lblJoueur2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -159,7 +159,7 @@
                               </Group>
                               <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="lblUsineDeux2" max="32767" attributes="0"/>
+                          <Component id="lblUsineDeux2" min="-2" pref="68" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -188,7 +188,6 @@
             <Component class="javax.swing.JLabel" name="lblUsineDeux2">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Usine 2"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -199,7 +198,6 @@
             <Component class="javax.swing.JLabel" name="lblUsineUn2">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Usine 1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -210,7 +208,6 @@
             <Component class="javax.swing.JLabel" name="lblRecherche2">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Recherche"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -220,12 +217,12 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblPtsVie2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="50"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCarteEnMain2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="5"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -250,23 +247,23 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblCarteEnMain3" min="-2" max="-2" attributes="0"/>
                                   <Component id="lblPtsVie3" min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Component id="lblCarteEnMain3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="lblJoueur3" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                      <Component id="lblUsineUn3" min="-2" pref="99" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="lblUsineUn3" min="-2" pref="94" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblUsineDeux3" min="-2" pref="94" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -279,33 +276,30 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblJoueur3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="lblUsineDeux3" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
-                                  <Component id="lblRecherche3" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
-                                  <Component id="lblUsineUn3" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                                  <Component id="lblPtsVie3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblCarteEnMain3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblPtsVie3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="lblCarteEnMain3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblJoueur3" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblUsineUn3" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                                  <Component id="lblUsineDeux3" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
+                                  <Component id="lblRecherche3" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -331,18 +325,23 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblPtsVie3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="50"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+              </AccessibilityProperties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCarteEnMain3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="5"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value=""/>
+              </AccessibilityProperties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblUsineUn3">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Usine 1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -353,7 +352,6 @@
             <Component class="javax.swing.JLabel" name="lblUsineDeux3">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Usine 2"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -364,7 +362,6 @@
             <Component class="javax.swing.JLabel" name="lblRecherche3">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Recherche"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -409,13 +406,13 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="lblUsineUn4" min="-2" pref="94" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblUsineDeux4" min="-2" pref="94" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblRecherche4" min="-2" pref="94" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -423,25 +420,27 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblJoueur4" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblPtsVie4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="lblCarteEnMain4" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                              <Component id="lblUsineUn4" alignment="3" min="-2" pref="67" max="-2" attributes="0"/>
+                              <Component id="lblUsineUn4" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="lblUsineDeux4" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
                               <Component id="lblRecherche4" alignment="3" min="-2" pref="68" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="lblPtsVie4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lblCarteEnMain4" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="lblJoueur4" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace pref="15" max="32767" attributes="0"/>
@@ -470,18 +469,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblPtsVie4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="50"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblCarteEnMain4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="5"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblUsineUn4">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Usine 1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -492,7 +490,6 @@
             <Component class="javax.swing.JLabel" name="lblUsineDeux4">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Usine 2"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -503,7 +500,6 @@
             <Component class="javax.swing.JLabel" name="lblRecherche4">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Recherche"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -555,21 +551,21 @@
                               <Component id="lblUsineDeux1" min="-2" pref="94" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="lblRecherche1" min="-2" pref="94" max="-2" attributes="0"/>
-                              <EmptySpace min="43" pref="43" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
                               <Component id="pnlCarte1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="pnlCarte2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="pnlCarte3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="pnlCarte4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="pnlCarte5" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -707,9 +703,9 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lblNomCarte1" max="32767" attributes="0"/>
-                              <Component id="lblImgCarte1" alignment="1" pref="84" max="32767" attributes="0"/>
-                              <Component id="jScrollPane3" alignment="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="lblNomCarte1" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="lblImgCarte1" alignment="1" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -723,7 +719,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblImgCarte1" min="-2" pref="75" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" pref="66" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -744,6 +740,9 @@
                         <EtchetBorder/>
                       </Border>
                     </Property>
+                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[85, 75]"/>
+                    </Property>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane3">
@@ -763,8 +762,9 @@
                           <Color blue="f0" green="f0" red="f0" type="rgb"/>
                         </Property>
                         <Property name="columns" type="int" value="20"/>
+                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Monospaced" size="10" style="0"/>
+                          <Font name="Monospaced" size="8" style="0"/>
                         </Property>
                         <Property name="lineWrap" type="boolean" value="true"/>
                         <Property name="rows" type="int" value="3"/>
@@ -790,7 +790,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane4" alignment="1" pref="220" max="32767" attributes="0"/>
+                              <Component id="jScrollPane4" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="lblNomCarteChoisi" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -809,9 +809,9 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblNomCarteChoisi" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="lblImgCarteChoisi" pref="145" max="32767" attributes="0"/>
+                          <Component id="lblImgCarteChoisi" min="-2" pref="146" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane4" pref="121" max="32767" attributes="0"/>
+                          <Component id="jScrollPane4" pref="120" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -833,6 +833,9 @@
                   <Properties>
                     <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
                     <Property name="verticalScrollBarPolicy" type="int" value="21"/>
+                    <Property name="horizontalScrollBar" type="javax.swing.JScrollBar" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                      <ComponentRef name="null"/>
+                    </Property>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -880,9 +883,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblImgCarte2" alignment="1" pref="84" max="32767" attributes="0"/>
-                              <Component id="jScrollPane77" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="lblNomCarte2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblImgCarte2" alignment="1" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="jScrollPane77" alignment="0" pref="85" max="-2" attributes="0"/>
+                              <Component id="lblNomCarte2" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -917,6 +920,9 @@
                         <EtchetBorder/>
                       </Border>
                     </Property>
+                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[85, 75]"/>
+                    </Property>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane77">
@@ -936,8 +942,9 @@
                           <Color blue="f0" green="f0" red="f0" type="rgb"/>
                         </Property>
                         <Property name="columns" type="int" value="20"/>
+                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Monospaced" size="10" style="0"/>
+                          <Font name="Monospaced" size="8" style="0"/>
                         </Property>
                         <Property name="lineWrap" type="boolean" value="true"/>
                         <Property name="rows" type="int" value="3"/>
@@ -967,14 +974,16 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="lblNomCarte3" max="32767" attributes="0"/>
-                              <Component id="lblImgCarte3" alignment="1" pref="84" max="32767" attributes="0"/>
-                              <Component id="jScrollPane78" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="lblNomCarte3" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane78" pref="85" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="lblImgCarte3" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -986,7 +995,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblImgCarte3" min="-2" pref="75" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane78" pref="66" max="32767" attributes="0"/>
+                          <Component id="jScrollPane78" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1000,19 +1009,13 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="lblImgCarte3">
-                  <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
-                        <EtchetBorder/>
-                      </Border>
-                    </Property>
-                  </Properties>
-                </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane78">
                   <Properties>
                     <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
                     <Property name="verticalScrollBarPolicy" type="int" value="21"/>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[85, 39]"/>
+                    </Property>
                   </Properties>
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -1026,8 +1029,9 @@
                           <Color blue="f0" green="f0" red="f0" type="rgb"/>
                         </Property>
                         <Property name="columns" type="int" value="20"/>
+                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Monospaced" size="10" style="0"/>
+                          <Font name="Monospaced" size="8" style="0"/>
                         </Property>
                         <Property name="lineWrap" type="boolean" value="true"/>
                         <Property name="rows" type="int" value="3"/>
@@ -1036,6 +1040,18 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JLabel" name="lblImgCarte3">
+                  <Properties>
+                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                      <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                        <EtchetBorder/>
+                      </Border>
+                    </Property>
+                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[85, 75]"/>
+                    </Property>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="pnlCarte4">
@@ -1060,9 +1076,9 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblImgCarte4" alignment="1" pref="84" max="32767" attributes="0"/>
-                              <Component id="jScrollPane79" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="lblNomCarte4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblImgCarte4" alignment="1" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="jScrollPane79" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="lblNomCarte4" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1097,6 +1113,9 @@
                         <EtchetBorder/>
                       </Border>
                     </Property>
+                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[85, 75]"/>
+                    </Property>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane79">
@@ -1116,8 +1135,9 @@
                           <Color blue="f0" green="f0" red="f0" type="rgb"/>
                         </Property>
                         <Property name="columns" type="int" value="20"/>
+                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Monospaced" size="10" style="0"/>
+                          <Font name="Monospaced" size="8" style="0"/>
                         </Property>
                         <Property name="lineWrap" type="boolean" value="true"/>
                         <Property name="rows" type="int" value="3"/>
@@ -1150,9 +1170,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="lblImgCarte5" alignment="1" pref="84" max="32767" attributes="0"/>
-                              <Component id="jScrollPane87" alignment="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="lblNomCarte5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblImgCarte5" alignment="1" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="jScrollPane87" alignment="0" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="lblNomCarte5" alignment="0" pref="85" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -1187,6 +1207,9 @@
                         <EtchetBorder/>
                       </Border>
                     </Property>
+                    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[85, 75]"/>
+                    </Property>
                   </Properties>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane87">
@@ -1206,8 +1229,9 @@
                           <Color blue="f0" green="f0" red="f0" type="rgb"/>
                         </Property>
                         <Property name="columns" type="int" value="20"/>
+                        <Property name="editable" type="boolean" value="false"/>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Monospaced" size="10" style="0"/>
+                          <Font name="Monospaced" size="8" style="0"/>
                         </Property>
                         <Property name="lineWrap" type="boolean" value="true"/>
                         <Property name="rows" type="int" value="3"/>
@@ -1289,7 +1313,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblImgCarteJeu" min="-2" pref="146" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" pref="115" max="32767" attributes="0"/>
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -1390,7 +1414,6 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="editable" type="boolean" value="false"/>
                     <Property name="rows" type="int" value="3"/>
-                    <Property name="text" type="java.lang.String" value="Joueur 1 joue&#xa;Joueur 2 joue&#xa;Joueur 3 joue&#xa;joueur 4 joue"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Default Cursor"/>
                     </Property>
@@ -1480,19 +1503,19 @@
             <Component class="javax.swing.JLabel" name="lblTour">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="31"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblPaquet">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="31"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="lblTalon">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
-                <Property name="text" type="java.lang.String" value="31"/>
+                <Property name="text" type="java.lang.String" value="0"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnAbandonner">
