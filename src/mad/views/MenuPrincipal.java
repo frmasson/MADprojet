@@ -9,8 +9,8 @@ package mad.views;
  * @author Francois
  */
 public class MenuPrincipal extends javax.swing.JFrame {
-
-    /**
+	private static final long serialVersionUID = 3842278862777833254L;
+	/**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {

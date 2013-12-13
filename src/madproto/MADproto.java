@@ -5,7 +5,6 @@
 package madproto;
 
 import mad.views.MenuPrincipal;
-import mad.views.VuePartie;
 
 /**
  *

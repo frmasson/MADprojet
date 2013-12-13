@@ -4,8 +4,6 @@
  */
 package mad.game;
 
-import mad.cards.CardSet;
-
 /**
  *
  * @author Christophe
