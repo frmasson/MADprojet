@@ -246,8 +246,7 @@ public class Game {
                             dmg = card.resist(dmg);
                             aoeTarget.substractHitPoints(dmg);
                         }
-                    } else {
-                        System.out.println("la carte est single target");
+                    } else {                        
                         aoeTarget.substractHitPoints(dmg);
                     }
                 }
@@ -260,6 +259,7 @@ public class Game {
                 }
             }
         } else {
+            System.out.println("la carte est single target");
             if (card.isResistible()) {
                 int targetDefenceBonus = target.getDefenceBonus();
                 defenceRoll = randomize(1 + targetDefenceBonus, 20 + targetDefenceBonus);
@@ -271,14 +271,19 @@ public class Game {
                 target.substractHitPoints(dmg);
             }
         }
+        System.out.println("avant le update");
         vue.updateInterface();
+        System.out.println("apres le update");
         //showOpponentAttack(Carte carte, int cible(0 à 3))
        // vue.showOpponentAttack(card, );
+        System.out.println("avant le wait");
         try {
             wait(1000);
         } catch (InterruptedException ex) {
+            System.out.println("l'exeption du wait");
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
+        System.out.println("apres le wait");
     }
 
     private void applyEffects(Player target, DefenceCard card) {
