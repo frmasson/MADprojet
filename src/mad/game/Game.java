@@ -128,6 +128,7 @@ public class Game {
     public void playRound() {
         System.out.println("on lance playRound est le currentPlayer est = " + currentPlayer);
         giveFullCards();
+       vue.updateInterface();
         if (currentPlayer == 0) {
             unlockPlayerCards();
         } else {
@@ -328,8 +329,11 @@ public class Game {
 
     private void giveFullCards() {
         Player player = players.get(currentPlayer);
+        System.out.println("le nombre de carte du joueur " + currentPlayer + " est " + player.getCards().size());
         while (player.getCards().size() < Player.NBMAXCARDS - 1){
+            System.out.println("on ajoute une carte");
             player.addCard(cards.pop());
         }
+        System.out.println("apres l'ajout, le nombre de carte du joueur " + currentPlayer + " est " + player.getCards().size());
     }
 }
