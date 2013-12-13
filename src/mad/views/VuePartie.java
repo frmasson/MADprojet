@@ -476,6 +476,7 @@ public class VuePartie extends javax.swing.JFrame {
 
         lblNomCarte1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
 
+        lblImgCarte1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mad/views/essai.jpg"))); // NOI18N
         lblImgCarte1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         lblImgCarte1.setMaximumSize(new java.awt.Dimension(85, 75));
 
@@ -542,7 +543,7 @@ public class VuePartie extends javax.swing.JFrame {
                     .addGroup(pnlCarteChoisiLayout.createSequentialGroup()
                         .addComponent(lblNomCarteChoisi)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lblImgCarteChoisi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblImgCarteChoisi, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblCarteChoisi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -862,12 +863,12 @@ public class VuePartie extends javax.swing.JFrame {
             .addGroup(pnlCarteJeuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlCarteJeuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCarteJeuLayout.createSequentialGroup()
                         .addComponent(lblCarteEnJeu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblNomCarteJeu))
-                    .addComponent(lblImgCarteJeu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblImgCarteJeu, javax.swing.GroupLayout.DEFAULT_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         pnlCarteJeuLayout.setVerticalGroup(
@@ -1109,7 +1110,7 @@ public class VuePartie extends javax.swing.JFrame {
     }//GEN-LAST:event_pnlCarte4MouseClicked
 
     private void pnlCarte5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlCarte5MouseClicked
-        if (pnlCarte4.isEnabled()) {
+        if (pnlCarte5.isEnabled()) {
             selection = 4;
             btnAction1.setEnabled(true);
             
@@ -1261,6 +1262,7 @@ public class VuePartie extends javax.swing.JFrame {
         Player player = (Player)partie.getPlayers().get(0);
         Card card;
         ImageIcon img;
+        Image dimg;
         
         lblTour.setText(Integer.toString(partie.getNbTours()));
         lblPaquet.setText(Integer.toString(partie.getCards().size()));
@@ -1290,7 +1292,9 @@ public class VuePartie extends javax.swing.JFrame {
             card = player.getCards().get(0);
             lblNomCarte1.setText(card.getName());
             img = card.getImage();
-            img = new ImageIcon(getScaledImage(img.getImage(), 80, 70));
+            dimg = (img.getImage()).getScaledInstance(80, 70,
+                Image.SCALE_SMOOTH);
+            img = new ImageIcon(dimg);
             lblImgCarte1.setIcon(img);
             txtDescriptionCarte1.setText(card.getDescription());
         } else {
@@ -1493,18 +1497,23 @@ public class VuePartie extends javax.swing.JFrame {
      */
     public void unlockTargetingPhase(boolean aliveOpponents[]) {
         phaseJeu = Phase.TARGETING;
-        if (aliveOpponents[0]) {
-            PnlAdversaire1.setEnabled(true);
-            PnlAdversaire1.setBackground(actif);
-        }
-        if (aliveOpponents[1]) {
-            PnlAdversaire2.setEnabled(true);
-            PnlAdversaire2.setBackground(actif);
-        }
-        if (aliveOpponents[2]) {
-            PnlAdversaire3.setEnabled(true);
-            PnlAdversaire3.setBackground(actif);
-        }
+        if (aliveOpponents.length >= 1)
+            if (aliveOpponents[0]) {
+                PnlAdversaire1.setEnabled(true);
+                PnlAdversaire1.setBackground(actif);
+            }
+        
+        if (aliveOpponents.length >= 2)
+            if (aliveOpponents[1]) {
+                PnlAdversaire2.setEnabled(true);
+                PnlAdversaire2.setBackground(actif);
+            }
+        
+        if (aliveOpponents.length >= 3)
+            if (aliveOpponents[2]) {
+                PnlAdversaire3.setEnabled(true);
+                PnlAdversaire3.setBackground(actif);
+            }
     }
     
     /*
@@ -1560,13 +1569,5 @@ public class VuePartie extends javax.swing.JFrame {
     public void showOpponentAttack(Card carte, int cible) {
         
     }
-    
-     private Image getScaledImage(Image srcImg, int w, int h){
-        BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
-        Graphics2D g2 = resizedImg.createGraphics();
-        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        g2.drawImage(srcImg, 0, 0, w, h, null);
-        g2.dispose();
-        return resizedImg;
-    }
+   
 }
