@@ -26,13 +26,14 @@ public class Game {
     private int startingHitPoints;
     private int nbTours = 0;
     private int nbPlayers = 0;
-    //private int nbPlayerAlive = 0;
+    private int nbPlayerAlive = 0;
     private boolean firstRound = true;
+    
 
     public Game(VuePartie vue, int nbPlayers, int startingHitPoints, CardSet cards) {
         this.vue = vue;
         this.nbPlayers = nbPlayers;
-        //this.nbPlayerAlive = nbPlayers;
+        this.nbPlayerAlive = nbPlayers;
         this.cards = cards;
         this.cards.shuffle();
         this.startingHitPoints = startingHitPoints;
@@ -71,7 +72,7 @@ public class Game {
     }
 
     public void killPlayer(Player player) {
-        //this.nbPlayerAlive--;
+        this.nbPlayerAlive--;
         //@TODO
     }
 
@@ -116,7 +117,7 @@ public class Game {
         if (!isEnded()) {
             currentPlayer = (currentPlayer + 1) % nbPlayers;
             if (!players.get(currentPlayer).isKilled()) {
-                System.out.println("le joueur " + currentPlayer + " est en vie avec " + players.get(currentPlayer).getHitPoints() + " points de vie, on joue son tour");
+                System.out.println("le joueur " + currentPlayer + " est en vie avec " + players.get(currentPlayer).getHitPoints()+ " points de vie, on joue son tour");
                 playRound();
             } else {
                 System.out.println("le joueur " + currentPlayer + "est mort, on passe son tour");
@@ -124,15 +125,15 @@ public class Game {
             }
 
         } else {
-            vue.endGame("j'sais pas qui");
+            vue.endGame(Integer.toString(currentPlayer));
         }
     }
 
     public void playRound() {
         System.out.println("on lance playRound est le currentPlayer est = " + currentPlayer);
         giveFullCards();
-        if (!firstRound) {
-            vue.updateInterface();
+        if (!firstRound){
+            vue.updateInterfaceJeu();
         } else {
             firstRound = false;
         }
@@ -191,6 +192,7 @@ public class Game {
 
     public void playerSelectTarget(int pos) {
         Player target = players.get(pos);
+        vue.lockAllPhase();
         applyEffects(target, (AttackCard) currentlyPlayedCard);
     }
 
@@ -214,8 +216,12 @@ public class Game {
         System.out.println("le npc select une target");
         int posTarget = currentPlayer;
         while (posTarget == currentPlayer || players.get(posTarget).isKilled()) {
+<<<<<<< HEAD
             posTarget = (randomize(1, nbPlayers )) - 1;
             System.out.println("posTarget = " + posTarget);
+=======
+            posTarget = randomize(0, nbPlayers - 1);
+>>>>>>> c396aca5ef9749d5880b43b88ce1119f49bb7af6
         }
         System.out.println("le npc a selectionné la target " + posTarget);
         return players.get(posTarget);
@@ -225,17 +231,7 @@ public class Game {
     }
 
     public boolean isEnded() {
-        return getNbPlayersAlive() <= 1 || players.get(0).isKilled();
-    }
-
-    private int getNbPlayersAlive() {
-        int nbPlayerAlive = 0;
-        for (Player player : players) {
-            if (!player.isKilled()) {
-                nbPlayerAlive++;
-            }
-        }
-        return nbPlayerAlive;
+        return nbPlayerAlive <= 1 || players.get(0).isKilled();
     }
 
     public boolean playerWon() {
@@ -250,11 +246,11 @@ public class Game {
     private boolean[] determinePlayableCards() {
         Player player = players.get(0);
         ArrayList<Card> cards = player.getCards();
-        boolean playableCards[] = new boolean[Player.NBMAXCARDS];
-        for (int i = 0; i < playableCards.length; i++){
-            playableCards[i] = false;
+        boolean playableCards[] = new boolean[5];
+        for (boolean bool: playableCards) {
+            bool = false;
         }
-
+        
         for (int i = 0; i < cards.size(); i++) {
             playableCards[i] = cards.get(i).getType().equals("Attack");
         }
@@ -286,15 +282,11 @@ public class Game {
                     } else {
                         aoeTarget.substractHitPoints(dmg);
                     }
-                }
-                vue.updateInterface();
-                vue.showOpponentAttack(card, indexOfPlayer);
-                try {
-                    Thread.currentThread().sleep(3000);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                }                            
             }
+            
+            vue.updateInterfaceJeu();
+            vue.showOpponentAttack(card, -1, currentPlayer);
         } else {
             System.out.println("la carte est single target");
             if (card.isResistible()) {
@@ -309,12 +301,9 @@ public class Game {
             } else {
                 target.substractHitPoints(dmg);
             }
+            vue.updateInterfaceJeu();
+            vue.showOpponentAttack(card, players.indexOf(target), currentPlayer);
         }
-        System.out.println("avant le update");
-        vue.updateInterface();
-        System.out.println("apres le update");
-        //showOpponentAttack(Carte carte, int cible(0 à 3))
-        // vue.showOpponentAttack(card, );
         System.out.println("avant le wait");
         try {
             Thread.currentThread().sleep(3000);
@@ -336,12 +325,17 @@ public class Game {
         } else if (card.getType().equals("ResearchCenter")) {
             players.get(currentPlayer).setResearchCenter(new ResearchCenter(card));
         }
-        vue.updateInterface();
+        vue.updateInterfaceJeu();
     }
 
+<<<<<<< HEAD
     private int randomize(int min, int max) {
         //Min + (int)(Math.random() * ((Max - Min) + 1))
         return min + (int)(Math.random() * ((max - min) + 1));
+=======
+    private int randomize(int minValue, int maxValue) {
+        return (minValue + (int)(Math.random() * ((maxValue - minValue) + 1)));
+>>>>>>> c396aca5ef9749d5880b43b88ce1119f49bb7af6
     }
 
     private boolean[] getAliveOpponents() {
@@ -355,7 +349,7 @@ public class Game {
     private void giveFullCards() {
         Player player = players.get(currentPlayer);
         System.out.println("le nombre de carte du joueur " + currentPlayer + " est " + player.getCards().size());
-        while (player.getCards().size() < Player.NBMAXCARDS - 1) {
+        while (player.getCards().size() < Player.NBMAXCARDS - 1){
             System.out.println("on ajoute une carte");
             player.addCard(cards.pop());
         }

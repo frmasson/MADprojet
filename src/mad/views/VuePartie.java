@@ -92,8 +92,14 @@ public class VuePartie extends javax.swing.JFrame {
         }
         //</editor-fold>
         
-        partie = new Game(this,nbJoueur,ptsVie,cards);
-        updateInterface();
+        pnlCarteChoisi.setBackground(defaut);
+        PnlCarteEnJeu.setBackground(defaut);
+        pnlCarteJeu.setBackground(defaut);
+        pnlStatut.setBackground(defaut);
+        pnlInformation.setBackground(defaut);
+        lockAllPhase();
+        partie = new Game(this,nbJoueur,ptsVie,cards);    
+        updateInterfaceJeu();       
     }
 
     /**
@@ -476,7 +482,6 @@ public class VuePartie extends javax.swing.JFrame {
 
         lblNomCarte1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
 
-        lblImgCarte1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mad/views/essai.jpg"))); // NOI18N
         lblImgCarte1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         lblImgCarte1.setMaximumSize(new java.awt.Dimension(85, 75));
 
@@ -1125,21 +1130,18 @@ public class VuePartie extends javax.swing.JFrame {
 
     private void PnlAdversaire1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlAdversaire1MouseClicked
         if (PnlAdversaire1.isEnabled()) {
-            lockAllPhase();
             partie.playerSelectTarget(1);
         }
     }//GEN-LAST:event_PnlAdversaire1MouseClicked
 
     private void PnlAdversaire2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlAdversaire2MouseClicked
         if (PnlAdversaire2.isEnabled()) {
-            lockAllPhase();
             partie.playerSelectTarget(2);
         }
     }//GEN-LAST:event_PnlAdversaire2MouseClicked
 
     private void PnlAdversaire3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PnlAdversaire3MouseClicked
         if (PnlAdversaire3.isEnabled()) {
-            lockAllPhase();
             partie.playerSelectTarget(3);
         }
     }//GEN-LAST:event_PnlAdversaire3MouseClicked
@@ -1261,7 +1263,7 @@ public class VuePartie extends javax.swing.JFrame {
      * Change l'écran pour se conformer avec les changements de la partie
      * *important* Appeler à chaque changement *important*
      */
-    public void updateInterface() {
+    public void updateInterfaceJeu() {
         Player player = (Player)partie.getPlayers().get(0);
         Card card;
         ImageIcon img;
@@ -1432,6 +1434,8 @@ public class VuePartie extends javax.swing.JFrame {
             lblPtsVie4.setText(Integer.toString(player.getHitPoints()));
             lblCarteEnMain4.setText(Integer.toString(player.getCards().size()));
         }
+        
+        this.setVisible(true);
     }
     
     /*
@@ -1464,6 +1468,8 @@ public class VuePartie extends javax.swing.JFrame {
         lblUsineUn1.setForeground(Color.BLACK);
         lblUsineDeux1.setEnabled(false);
         lblUsineDeux1.setForeground(Color.BLACK);
+        
+        this.setVisible(true);
     }
     
     /*
@@ -1573,7 +1579,7 @@ public class VuePartie extends javax.swing.JFrame {
         this.dispose();
     }
     
-    public void showOpponentAttack(Card carte, int cible) {
+    public void showOpponentAttack(Card carte, int cible, int lanceur) {
         lblCarteEnJeu.setText(carte.getName());
         lblImgCarteJeu.setIcon(carte.getImage());
         txtDescriptionCarteJeu.setText(carte.getDescription());
@@ -1588,7 +1594,9 @@ public class VuePartie extends javax.swing.JFrame {
             PnlInfoPersonnel.setBackground(attaque);
         else if (cible == -1) {
             
-        }            
+        }
+        
+        this.setVisible(true);
     }
    
 }
