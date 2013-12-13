@@ -20,7 +20,6 @@ public class Game {
     private CardSet cards;
     private CardSet discardedCards;
     private Card currentlyPlayedCard;
-    private Card previousPlayedCard;
     private int startingHitPoints;
     private int nbTours = 0;
     private int nbPlayers = 0;
@@ -74,11 +73,11 @@ public class Game {
         //@TODO
     }
 
-    public ArrayList getPlayers() {
+    public ArrayList<Player> getPlayers() {
         return players;
     }
 
-    public void setPlayers(ArrayList Players) {
+    public void setPlayers(ArrayList<Player> Players) {
         this.players = Players;
     }
 
@@ -162,7 +161,6 @@ public class Game {
 
     public void playerPlayCard(int pos) {
         System.out.println("le joueur a cliqué sur la " + pos + "e carte");
-        previousPlayedCard = currentlyPlayedCard;
         currentlyPlayedCard = players.get(0).playCard(pos);
         //les cartes ne sont plus unlockées
         //vue.???
@@ -240,9 +238,9 @@ public class Game {
         Player player = players.get(0);
         ArrayList<Card> cards = player.getCards();
         boolean playableCards[] = new boolean[5];
-        for (boolean bool: playableCards) {
-            bool = false;
-        }
+//        for (boolean bool: playableCards) {
+//            bool = false;
+//        }
         
         for (int i = 0; i < cards.size(); i++) {
             playableCards[i] = cards.get(i).getType().equals("Attack");
@@ -317,9 +315,6 @@ public class Game {
         giveFullCards();
         vue.updateInterfaceJeu();
         vue.unlockContinuePhase();
-    }
-
-    private void applyEffects(Player target, DefenceCard card) {
     }
 
     private void applyEffects(Player target, ConstructionCard card) {
