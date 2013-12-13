@@ -225,7 +225,7 @@ public class Game {
     }
 
     public boolean isEnded() {
-        return (nbPlayers - nbPlayerAlive) > 1 && !players.get(0).isKilled();
+        return nbPlayerAlive <= 1 || players.get(0).isKilled();
     }
 
     public boolean playerWon() {
