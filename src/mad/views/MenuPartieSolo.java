@@ -76,14 +76,14 @@ public class MenuPartieSolo extends javax.swing.JFrame {
         lblPointsVie.setText("Points de vie :");
 
         lblNbOpposants.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        lblNbOpposants.setText("Nombre d'opposants :");
+        lblNbOpposants.setText("Nombre de joueurs :");
 
         lblEnsemble.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         lblEnsemble.setText("Ensemble de cartes :");
 
         cboPointsVie.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", " " }));
 
-        cboNbOpposants.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3" }));
+        cboNbOpposants.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2", "3", "4" }));
 
         lblParamatresSolo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblParamatresSolo.setText("Paramètres de la partie");
@@ -148,6 +148,8 @@ public class MenuPartieSolo extends javax.swing.JFrame {
                     .addComponent(btnDemarrer1))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
+
+        lblNbOpposants.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
