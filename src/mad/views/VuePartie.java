@@ -30,7 +30,7 @@ public class VuePartie extends javax.swing.JFrame {
     private int selection;
     private Color defaut = new Color(240, 240, 240);
     private Color actif = new Color(102, 255, 102);
-    private Color target = new Color(255,255,102);
+    private Color target = new Color(255,255,150);
     private Color attaque = new Color(255, 51, 51);
 
     /**
@@ -99,8 +99,10 @@ public class VuePartie extends javax.swing.JFrame {
         pnlStatut.setBackground(defaut);
         pnlInformation.setBackground(defaut);
         lockAllPhase();
+        AnnouncePlayerAction("Bienvenue dans la partie!");
         partie = new Game(this,nbJoueur,ptsVie,cards);    
-        updateInterfaceJeu();       
+        updateInterfaceJeu();
+        
     }
 
     /**
@@ -276,19 +278,18 @@ public class VuePartie extends javax.swing.JFrame {
                 .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblUsineUn2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblRecherche2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUsineDeux2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PnlAdversaire1Layout.createSequentialGroup()
                         .addComponent(lblJoueur2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(lblDommage2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel1)
-                                .addComponent(lblPtsVie2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblPtsVie2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(lblCarteEnMain2)))
-                    .addComponent(lblUsineDeux2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblCarteEnMain2))))
                 .addGap(15, 15, 15))
         );
 
@@ -1534,7 +1535,7 @@ public class VuePartie extends javax.swing.JFrame {
      */
     public void unlockAttackPhase(boolean attackCards[]) {
         phaseJeu = Phase.ATTAQUE;
-        AnnouncePlayerAction("C'est vôtre tour\n");
+        AnnouncePlayerAction("\nC'est vôtre tour");
         selection = 0;
         //btnAction2.setEnabled(true);
         PnlInfoPersonnel.setBackground(actif);
@@ -1566,7 +1567,7 @@ public class VuePartie extends javax.swing.JFrame {
      */
     public void unlockTargetingPhase(boolean aliveOpponents[]) {
         phaseJeu = Phase.TARGETING;
-        AnnouncePlayerAction("Choisir une cible\n");
+        AnnouncePlayerAction("\nChoisir une cible");
         if (aliveOpponents.length >= 1)
             if (aliveOpponents[0]) {
                 PnlAdversaire1.setEnabled(true);
@@ -1699,9 +1700,9 @@ public class VuePartie extends javax.swing.JFrame {
         }
         
         if (cible == -1)
-            AnnouncePlayerAction("Le joueur " + (lanceur + 1) + " a joué " + carte.getName() + " sur tous les opposants\n");
+            AnnouncePlayerAction("\nLe joueur " + (lanceur + 1) + " a joué " + carte.getName() + " sur tous les opposants");
         else
-            AnnouncePlayerAction("Le joueur " + (lanceur + 1) + " a joué " + carte.getName() + " sur le joueur " + (cible + 1)+ "\n");
+            AnnouncePlayerAction("\nLe joueur " + (lanceur + 1) + " a joué " + carte.getName() + " sur le joueur " + (cible + 1));
         
         frame.revalidate();
         frame.repaint();
