@@ -30,6 +30,7 @@ public class VuePartie extends javax.swing.JFrame {
     private int selection;
     private Color defaut = new Color(240, 240, 240);
     private Color actif = new Color(102, 255, 102);
+    private Color target = new Color(255,255,102);
     private Color attaque = new Color(255, 51, 51);
 
     /**
@@ -278,10 +279,11 @@ public class VuePartie extends javax.swing.JFrame {
                     .addGroup(PnlAdversaire1Layout.createSequentialGroup()
                         .addComponent(lblJoueur2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(lblPtsVie2)
-                            .addComponent(lblDommage2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDommage2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1)
+                                .addComponent(lblPtsVie2)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PnlAdversaire1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
@@ -289,8 +291,6 @@ public class VuePartie extends javax.swing.JFrame {
                     .addComponent(lblUsineDeux2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(15, 15, 15))
         );
-
-        lblDommage2.getAccessibleContext().setAccessibleDescription("");
 
         PnlAdversaire2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         PnlAdversaire2.setEnabled(false);
@@ -1534,28 +1534,30 @@ public class VuePartie extends javax.swing.JFrame {
      */
     public void unlockAttackPhase(boolean attackCards[]) {
         phaseJeu = Phase.ATTAQUE;
+        AnnouncePlayerAction("C'est vôtre tour\n");
         selection = 0;
         //btnAction2.setEnabled(true);
+        PnlInfoPersonnel.setBackground(actif);
         
         if (attackCards[0]) {
             pnlCarte1.setEnabled(true);
-            pnlCarte1.setBackground(actif);
+            pnlCarte1.setBackground(target);
         }
         if (attackCards[1]) {
             pnlCarte2.setEnabled(true);
-            pnlCarte2.setBackground(actif);
+            pnlCarte2.setBackground(target);
         }
         if (attackCards[2]) {
             pnlCarte3.setEnabled(true);
-            pnlCarte3.setBackground(actif);
+            pnlCarte3.setBackground(target);
         }
         if (attackCards[3]) {
             pnlCarte4.setEnabled(true);
-            pnlCarte4.setBackground(actif);
+            pnlCarte4.setBackground(target);
         }
         if (attackCards[4]) {
             pnlCarte5.setEnabled(true);
-            pnlCarte5.setBackground(actif);
+            pnlCarte5.setBackground(target);
         }
     }
     
@@ -1564,22 +1566,23 @@ public class VuePartie extends javax.swing.JFrame {
      */
     public void unlockTargetingPhase(boolean aliveOpponents[]) {
         phaseJeu = Phase.TARGETING;
+        AnnouncePlayerAction("Choisir une cible\n");
         if (aliveOpponents.length >= 1)
             if (aliveOpponents[0]) {
                 PnlAdversaire1.setEnabled(true);
-                PnlAdversaire1.setBackground(actif);
+                PnlAdversaire1.setBackground(target);
             }
         
         if (aliveOpponents.length >= 2)
             if (aliveOpponents[1]) {
                 PnlAdversaire2.setEnabled(true);
-                PnlAdversaire2.setBackground(actif);
+                PnlAdversaire2.setBackground(target);
             }
         
         if (aliveOpponents.length >= 3)
             if (aliveOpponents[2]) {
                 PnlAdversaire3.setEnabled(true);
-                PnlAdversaire3.setBackground(actif);
+                PnlAdversaire3.setBackground(target);
             }
     }
     
@@ -1637,7 +1640,7 @@ public class VuePartie extends javax.swing.JFrame {
     }
     
     public void endGame(int winner) {
-        JOptionPane.showConfirmDialog(this, "Le gagnant est le joueur " + (winner + 1));
+        JOptionPane.showConfirmDialog(this, "Le gagnant est le joueur " + (winner + 1),"Fin de la partie",JOptionPane.DEFAULT_OPTION,JOptionPane.INFORMATION_MESSAGE);
         this.setVisible(false);
         new MenuPrincipal().start();
         this.dispose();
@@ -1696,9 +1699,9 @@ public class VuePartie extends javax.swing.JFrame {
         }
         
         if (cible == -1)
-            AnnouncePlayerAction("\nLe joueur " + (lanceur + 1) + " a joué " + carte.getName() + " sur tous les opposants");
+            AnnouncePlayerAction("Le joueur " + (lanceur + 1) + " a joué " + carte.getName() + " sur tous les opposants\n");
         else
-            AnnouncePlayerAction("\nLe joueur " + (lanceur + 1) + " a joué " + carte.getName() + " sur le joueur " + (cible + 1));
+            AnnouncePlayerAction("Le joueur " + (lanceur + 1) + " a joué " + carte.getName() + " sur le joueur " + (cible + 1)+ "\n");
         
         frame.revalidate();
         frame.repaint();
